@@ -145,6 +145,54 @@ body {
   color: var(--color-primary);
 }
 
+/* ── Profile icon buttons (sidebar) ── */
+.profile-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--color-border);
+  background: #f8fafc;
+  color: var(--color-secondary);
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.profile-icon-btn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background: #fff5f5;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(216, 31, 38, 0.12);
+  text-decoration: none;
+}
+.rg-btn {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #00adb5;
+}
+.rg-btn:hover {
+  color: var(--color-primary);
+}
+
+/* ── External link icon on publication titles ── */
+.pub-ext-link {
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-secondary);
+  opacity: 0.5;
+  margin-left: 0.35rem;
+  vertical-align: middle;
+  transition: opacity 0.2s;
+  text-decoration: none;
+}
+.pub-ext-link:hover {
+  opacity: 1;
+  color: var(--color-primary);
+}
+
 /* ── Teaching table ── */
 .teaching-table {
   width: 100%;
