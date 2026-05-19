@@ -3,108 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Saimir Bala - Research Associate, HU Berlin</title>
+    <title>Dr. Saimir Bala - Postdoctoral Researcher, HPI Potsdam</title>
     <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* Custom styles for background and font */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
-        
-        :root {
-          /* HPI-inspired color palette */
-          --color-primary: #d81f26; /* HPI Red */
-          --color-secondary: #012a4a; /* HPI Dark Blue/Navy */
-          --color-background: #ffffff; /* Clean white background */
-          --color-text: #0b2545; /* Dark navy text */
-          --color-border: #e6eef6; /* Very light blue border */
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--color-background);
-            color: var(--color-text);
-            line-height: 1.7;
-        }
-
-        .section-header {
-            border-bottom: 3px solid var(--color-primary);
-            padding-bottom: 0.5rem;
-            margin-bottom: 1.5rem;
-            font-size: 2rem; /* text-4xl */
-            font-weight: 800; /* font-extrabold */
-            color: var(--color-secondary);
-        }
-
-        /* Publication list style */
-        .publication-item {
-          padding: 1rem;
-          border-radius: 0.75rem;
-          transition: all 0.3s ease;
-          background-color: white;
-          border: 1px solid var(--color-border);
-          position: relative;
-        }
-        .publication-item:hover {
-          box-shadow: 0 4px 15px rgba(216, 31, 38, 0.08); /* Subtle HPI-red shadow on hover */
-          border-color: var(--color-primary);
-          transform: translateY(-2px);
-        }
-        
-        /* Link styling for professional look */
-        .pro-link {
-            color: var(--color-secondary);
-            font-weight: 600;
-            transition: color 0.2s;
-        }
-        .pro-link:hover {
-            color: var(--color-primary);
-            text-decoration: underline;
-        }
-
-        /* Flexbox container for new section */
-        .flex-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2rem;
-        }
-        .item {
-            flex: 1;
-            margin: 0 10px;
-        }
-        /* Auto-layout grid: responsive, auto-fit columns */
-        .auto-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-          gap: 1.25rem; /* ~gap-5 */
-        }
-        /* Publication index badge */
-        .pub-index {
-            display: inline-block;
-            background: var(--color-primary);
-            color: white;
-            padding: 0.12rem 0.5rem;
-            border-radius: 999px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            line-height: 1;
-            margin-left: 0.4rem;
-        }
-        /* Per-item dynamic index number */
-        .pub-number {
-          position: absolute;
-          top: 0.6rem;
-          right: 0.6rem;
-          background: var(--color-secondary);
-          color: white;
-          padding: 0.18rem 0.5rem;
-          border-radius: 0.5rem;
-          font-size: 0.75rem;
-          font-weight: 700;
-          line-height: 1;
-        }
-    </style>
-    <!-- Lucide Icons (Used as placeholders) -->
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="style.css">
     <script>
         tailwind.config = {
             theme: {
@@ -149,24 +52,27 @@
                      alt="Dr. Saimir Bala Profile Photo">
                 <h1 class="text-4xl font-extrabold text-gray-900 mb-1">Dr. Saimir Bala</h1>
                 <p class="text-lg font-semibold text-secondary mb-2 text-center md:text-left">
-                    Research Associate (PostDoc)
+                    Postdoctoral Researcher
                 </p>
                 <p class="text-md text-gray-600 text-center md:text-left">
-                    Process Management and Information Systems Group
+                    <a href="https://bpt.hpi.uni-potsdam.de/" target="_blank" class="pro-link">Business Process Technology (BPT) Group</a>
+                </p>
+                <p class="text-md text-gray-600 text-center md:text-left">
+                    Hasso Plattner Institute (HPI), University of Potsdam, Germany
                 </p>
                 <p class="text-md text-gray-600 mb-4 text-center md:text-left">
-                    Humboldt-Universität zu Berlin, Germany
+                    Postdoc, <a href="https://hpi.de/en/research/clusters/systems" target="_blank" class="pro-link">Systems Cluster</a>
                 </p>
                 
                 <!-- Quick Contact and Links -->
                 <div class="w-full space-y-2 text-sm">
                     <p class="flex items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                        <a href="mailto:saimir.bala@hu-berlin.de" class="pro-link">saimir.bala@hu-berlin.de</a>
+                        <a href="mailto:saimir.bala@hpi.de" class="pro-link">saimir.bala@hpi.de</a>
                     </p>
                     <p class="flex items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 10l-4 4-2-2"></path><circle cx="12" cy="12" r="10"></circle></svg>
-                        <a href="https://www.informatik.hu-berlin.de/en/forschung-en/gebiete/promis-en/team/balasaim" target="_blank" class="pro-link">HU Web Page</a>
+                        <a href="https://bpt.hpi.uni-potsdam.de/people/saimir-bala/" target="_blank" class="pro-link">HPI Web Page</a>
                     </p>
                     <p class="flex items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-9-2-9-5c0-4.5 4-8 9-8s9 3.5 9 8c0 3-4 6.5-9 5l-2.75 3.5v-3.5"></path></svg>
@@ -185,8 +91,9 @@
             <!-- Short Bio/Summary (Right Column on Desktop) -->
             <div class="md:w-3/4">
                 <h2 class="section-header !text-3xl border-secondary">Bio and Research Profile</h2>
-                <p class="mb-4 text-gray-700">I am a Research Associate (PostDoc) at <a href="https://www.informatik.hu-berlin.de/en/forschung-en/gebiete/promis-en/team/balasaim" target="_blank" class="pro-link">Humboldt-Universität zu Berlin, Germany</a> and a <a href="https://www.wu.ac.at/en/dpkm/team" target="_blank" class="pro-link">WU PhD alumnus</a>. My research lies at the crucial intersection of Process Mining, Business Analytics, and Software Engineering. I focus on developing methods that extract actionable, data-driven insights from complex process and behavioral data generated by software-intensive systems, bridging the gap between theoretical ML advances and real-world business decision challenges.</p>
-                <p class="mb-4 text-gray-700">My experience spans international collaborations (e.g., WU Vienna, Weizenbaum-Institut, SAP Signavio) and substantial industry project involvement (Siemens, SAP Signavio, Phactum Softwareentwicklung). I am committed to advancing predictive and prescriptive analytics to improve system performance, resource allocation, and human decision-making in dynamic environments.</p>
+                <p class="mb-4 text-gray-700">Saimir Bala is a Postdoctoral Researcher at the <a href="https://bpt.hpi.uni-potsdam.de/" target="_blank" class="pro-link">Business Process Technology (BPT) Group</a> at the <a href="https://hpi.de/en/" target="_blank" class="pro-link">Hasso Plattner Institute (HPI), University of Potsdam, Germany</a>, and a Postdoc of the <a href="https://hpi.de/en/research/clusters/systems" target="_blank" class="pro-link">Systems Cluster</a>. His research sits at the intersection of Software Engineering, Business Process Management, and Artificial Intelligence, with a particular focus on data-driven techniques for analyzing and improving complex processes.</p>
+                <p class="mb-4 text-gray-700">Prior to joining HPI, he was a Research Associate (PostDoc) at <a href="https://www.informatik.hu-berlin.de/en/forschung-en/gebiete/promis-en" target="_blank" class="pro-link">Humboldt-Universität zu Berlin</a> (2021–2025). He holds a PhD in Economics and Social Sciences from the <a href="https://www.wu.ac.at/en/dpkm/team" target="_blank" class="pro-link">Institute for Data, Process and Knowledge Management</a> at the Vienna University of Economics and Business (WU), Austria. His doctoral work investigated ways to bridge Process Mining and Software Engineering, developing analytical methods for understanding the software development process through data. He has also collaborated with SAP Signavio and the Weizenbaum Institute in Berlin on topics related to Lifecycle Processes and process transparency.</p>
+                <p class="mb-4 text-gray-700">Saimir holds a BSc and an MSc in Computer Science Engineering from Sapienza University of Rome.</p>
                 <p class="text-gray-700 italic border-l-4 border-primary pl-3 py-1">"My long-term research agenda aims to build an interdisciplinary group focused on predictive and prescriptive analytics for complex business and software processes, bridging data and process science with software engineering."</p>
             </div>
         </section>
@@ -216,11 +123,12 @@
 
             <p class="text-gray-700 text-sm">
                 Research on modeling, analyzing, and improving business and operational processes,
-                with a strong focus on <span class="font-medium">process mining</span> and
-                <span class="font-medium">object-centric event data</span>.
+                with a strong focus on <span class="font-medium">process mining</span>,
+                <span class="font-medium">object-centric event data</span>, and
+                <span class="font-medium">AI-driven process analytics</span>.
                 This includes data quality assessment, lifecycle and behavior analysis,
                 fairness and bias in process analytics, and the application of process mining
-                in organizational, educational, and industrial contexts.
+                and AI in organizational, educational, and industrial contexts.
             </p>
         </div>
 
@@ -267,7 +175,7 @@
                 <!-- Pub J2 (Journal) -->
                 <div class="publication-item">
                     <p class="text-xs font-bold uppercase text-primary mb-1">Journal Article (J2)</p>
-                    <p class="font-semibold text-lg text-gray-800"><a href="https://www.emerald.com/bpmj/article/29/8/230/258190/Enhancing-decision-making-of-IT-demand-management" target="_blank" class="pro-link">Enhancing decision making of IT demand management with process mining.</a></p>
+                    <p class="font-semibold text-lg text-gray-800"><a href="https://www.emerald.com/bpmj/article/29/8/230/258190/Enhancing-decision-making-of-IT-demand-management" target="_blank" class="pro-link">Enhancing decision making of IT demand management with process mining.</a><a href="https://www.emerald.com/bpmj/article/29/8/230/258190/Enhancing-decision-making-of-IT-demand-management" target="_blank" class="oa-badge" title="Open Access">&#x1F513; Open Access</a></p>
                     <p class="text-sm text-gray-600 italic">C. Novak, L. Pfahlsberger, <span class="font-bold">S. Bala</span>, K. Revoredo, J. Mendling. <span class="font-bold">Business Process Management Journal</span>, 29(8), 2023.</p>
                 </div>
 
@@ -335,6 +243,7 @@
       <p class="text-xs font-bold uppercase text-primary mb-1">Journal Article (J2)</p>
       <p class="font-semibold text-lg text-gray-800">
         Enhancing decision-making of IT demand management with process mining.
+        <a href="https://www.emerald.com/bpmj/article/29/8/230/258190/Enhancing-decision-making-of-IT-demand-management" target="_blank" class="oa-badge" title="Open Access">&#x1F513; Open Access</a>
       </p>
       <p class="text-sm text-gray-600 italic">
         C. Novak, L. Pfahlsberger, <span class="font-bold">S. Bala</span>, K. Revoredo, J. Mendling.
@@ -522,6 +431,7 @@
     <span class="font-bold">Saimir Bala</span>, Paul Kneringer, Jan Mendling.
     <span class="font-bold">PoEM (Forum)</span>,
     CEUR-WS Vol. 2793, 2020, pp. 54–63.
+    <a href="https://ceur-ws.org/Vol-2793/" target="_blank" class="oa-badge" title="Open Access — CEUR-WS">&#x1F513; Open Access</a>
   </p>
 </div>
 
@@ -559,6 +469,7 @@
     Elheme Azemi, <span class="font-bold">Saimir Bala</span>.
     <span class="font-bold">BPM Industry Forum</span>,
     CEUR-WS Vol. 2428, 2019, pp. 37–48.
+    <a href="https://ceur-ws.org/Vol-2428/" target="_blank" class="oa-badge" title="Open Access — CEUR-WS">&#x1F513; Open Access</a>
   </p>
 </div>
 
@@ -595,6 +506,7 @@
     <span class="font-bold">Saimir Bala</span>.
     <span class="font-bold">RADAR+EMISA @ CAiSE</span>,
     CEUR-WS Vol. 1859, 2017, pp. 133–137.
+    <a href="https://ceur-ws.org/Vol-1859/" target="_blank" class="oa-badge" title="Open Access — CEUR-WS">&#x1F513; Open Access</a>
   </p>
 </div>
 
@@ -635,6 +547,7 @@
     Alois Haselböck, Jan Mendling, Axel Polleres.
     <span class="font-bold">BPM (Demos)</span>,
     CEUR-WS Vol. 1789, 2016, pp. 50–55.
+    <a href="https://ceur-ws.org/Vol-1789/" target="_blank" class="oa-badge" title="Open Access — CEUR-WS">&#x1F513; Open Access</a>
   </p>
 </div>
 
@@ -704,35 +617,6 @@
 
   </div>
 </section>
-
-        <style>
-            .pub-filter-btn {
-            padding: 0.4rem 0.9rem;
-            border-radius: 999px;
-            background: #f1f5f9;
-            font-weight: 600;
-            cursor: pointer;
-            border: none;
-            transition: all 0.2s;
-            }
-            .pub-filter-btn:hover {
-            background: #e2e8f0;
-            }
-            .bibtex-btn {
-            margin-top: 0.5rem;
-            padding: 0.4rem 0.8rem;
-            font-size: 0.8rem;
-            font-weight: bold;
-            color: #2563eb;
-            background: none;
-            border: none;
-            cursor: pointer;
-            transition: color 0.2s;
-            }
-            .bibtex-btn:hover {
-            color: var(--color-primary);
-            }
-        </style>
 
         <script>
             /* TOGGLE FULL LIST */
@@ -810,7 +694,137 @@
             updatePublicationNumbers('#full-publications');
         </script>
 
-        <!-- 5. CONTACT SECTION -->
+        <!-- 5. TEACHING SECTION -->
+        <section id="teaching" class="py-16">
+            <h2 class="section-header">Teaching</h2>
+
+            <!-- Current: HPI -->
+            <h3 class="text-xl font-bold text-secondary mb-3">Hasso Plattner Institute (HPI), University of Potsdam</h3>
+            <div class="publication-item mb-8">
+                <table class="teaching-table">
+                    <thead>
+                        <tr>
+                            <th>Course</th>
+                            <th>Level</th>
+                            <th>Term</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <a href="https://moodle.hpi.de/course/view.php?id=1148" target="_blank" class="pro-link">BPM meets AI</a>
+                            </td>
+                            <td>Master Seminar</td>
+                            <td>SS26</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- HU Berlin -->
+            <h3 class="text-xl font-bold text-secondary mb-3">Humboldt-Universität zu Berlin</h3>
+            <div class="publication-item mb-8">
+                <table class="teaching-table">
+                    <thead>
+                        <tr>
+                            <th>Course</th>
+                            <th>Level / Type</th>
+                            <th>Term(s)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Business Process Automation</td>
+                            <td>Master &mdash; Lecture + Exercise</td>
+                            <td>WS22/23</td>
+                        </tr>
+                        <tr>
+                            <td>Business Process Automation</td>
+                            <td>Master &mdash; Exercise</td>
+                            <td>WS21/22, WS23/24</td>
+                        </tr>
+                        <tr>
+                            <td>Statistics and Data Science for Information Systems</td>
+                            <td>Bachelor</td>
+                            <td>SS25</td>
+                        </tr>
+                        <tr>
+                            <td>Software Engineering / Methoden und Modelle des Systementwurfs</td>
+                            <td>Bachelor &mdash; Lecture</td>
+                            <td>WS24/25</td>
+                        </tr>
+                        <tr>
+                            <td>Grundlagen der Programmierung</td>
+                            <td>Bachelor &mdash; Exercise</td>
+                            <td>WS21/22, WS22/23, WS23/24, WS24/25</td>
+                        </tr>
+                        <tr>
+                            <td>Grundlagen des Geschäftsprozessmanagements</td>
+                            <td>Bachelor &mdash; Exercise</td>
+                            <td>SS24, SS23</td>
+                        </tr>
+                        <tr>
+                            <td>Wirtschaftsinformatik</td>
+                            <td>Bachelor &mdash; Exercise</td>
+                            <td>SS22</td>
+                        </tr>
+                        <tr>
+                            <td>Proseminar on Data-Driven Software Analysis</td>
+                            <td>Bachelor &mdash; Seminar</td>
+                            <td>SS22</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- WU Vienna -->
+            <h3 class="text-xl font-bold text-secondary mb-3">Vienna University of Economics and Business (WU)</h3>
+            <div class="publication-item mb-8">
+                <table class="teaching-table">
+                    <thead>
+                        <tr>
+                            <th>Course</th>
+                            <th>Level / Type</th>
+                            <th>Term(s)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Process Analytics</td>
+                            <td>Master</td>
+                            <td>SS21, WS20/21, SS20, WS19/20</td>
+                        </tr>
+                        <tr>
+                            <td>Research Seminar Process Management</td>
+                            <td>Master &mdash; Seminar</td>
+                            <td>SS21, WS20/21, WS19/20</td>
+                        </tr>
+                        <tr>
+                            <td>Process Implementation</td>
+                            <td>Master</td>
+                            <td>SS19, WS18/19, SS18, WS17/18</td>
+                        </tr>
+                        <tr>
+                            <td>Process Innovation</td>
+                            <td>Master</td>
+                            <td>SS19</td>
+                        </tr>
+                        <tr>
+                            <td>Process-Oriented Systems Analysis</td>
+                            <td>Master</td>
+                            <td>SS17, WS16/17</td>
+                        </tr>
+                        <tr>
+                            <td>Data Science Program <span class="text-xs text-gray-500">(Process Mining Module, WU Executive MBA Academy)</span></td>
+                            <td>Executive Education</td>
+                            <td>2019, 2020</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- 6. CONTACT SECTION -->
         <section id="contact" class="py-12 text-white rounded-xl shadow-2xl p-8" style="background-color: rgba(1,42,74,0.9);">
             <h2 class="text-4xl font-extrabold mb-6 border-b-4 border-white pb-3">Get in Touch</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -820,9 +834,8 @@
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                         Email & Phone
                     </h3>
-                    <p class="mb-2"><strong>Work Email:</strong> <a href="mailto:saimir.bala@hu-berlin.de" class="hover:underline">saimir.bala@hu-berlin.de</a></p>
+                    <p class="mb-2"><strong>Work Email:</strong> <a href="mailto:saimir.bala@hpi.de" class="hover:underline">saimir.bala@hpi.de</a></p>
                     <p class="mb-2"><strong>Private Email:</strong> <a href="mailto:saimir.bala@gmail.com" class="hover:underline">saimir.bala@gmail.com</a></p>
-                    <p><strong>Phone:</strong> +49 30 2093-41270</p>
                 </div>
                 
                 <div>
@@ -841,9 +854,8 @@
                   Office Address
                 </h3>
 
-                <p>Unter den Linden 6</p>
-                <p>10099 Berlin, Germany</p>
-                <p class="mt-2">Visiting Researcher (Weizenbaum &amp; SAP Signavio)</p>
+                <p>Prof.-Dr.-Helmert-Str. 2-3, Room C-2.8</p>
+                <p>D-14482 Potsdam, Germany</p>
               </div>
                 
                 <div>
@@ -852,8 +864,8 @@
                         Online Profiles
                     </h3>
                     <div class="space-y-2">
-                        <a href="https://www.informatik.hu-berlin.de/en/forschung-en/gebiete/promis-en/team/balasaim" target="_blank" class="flex items-center hover:underline">
-                            HU Berlin Profile
+                        <a href="https://bpt.hpi.uni-potsdam.de/people/saimir-bala/" target="_blank" class="flex items-center hover:underline">
+                            HPI Profile
                         </a>
                         <a href="https://github.com/s41m1r" target="_blank" class="flex items-center hover:underline">
                           GitHub

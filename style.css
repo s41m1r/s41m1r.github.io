@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+
+:root {
+  --color-primary: #d81f26;       /* HPI Red */
+  --color-secondary: #012a4a;     /* HPI Dark Blue/Navy */
+  --color-background: #ffffff;
+  --color-text: #0b2545;
+  --color-border: #e6eef6;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    line-height: 1.7;
+}
+
+/* ── Section headers ── */
+.section-header {
+    border-bottom: 3px solid var(--color-primary);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--color-secondary);
+}
+
+/* ── Publication cards ── */
+.publication-item {
+  padding: 1rem;
+  border-radius: 0.75rem;
+  transition: all 0.3s ease;
+  background-color: white;
+  border: 1px solid var(--color-border);
+  position: relative;
+}
+.publication-item:hover {
+  box-shadow: 0 4px 15px rgba(216, 31, 38, 0.08);
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+/* ── Links ── */
+.pro-link {
+    color: var(--color-secondary);
+    font-weight: 600;
+    transition: color 0.2s;
+}
+.pro-link:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+}
+
+/* ── Layout helpers ── */
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+.item {
+    flex: 1;
+    margin: 0 10px;
+}
+.auto-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+
+/* ── Publication badges ── */
+.pub-index {
+    display: inline-block;
+    background: var(--color-primary);
+    color: white;
+    padding: 0.12rem 0.5rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-left: 0.4rem;
+}
+.pub-number {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  background: var(--color-secondary);
+  color: white;
+  padding: 0.18rem 0.5rem;
+  border-radius: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* ── Open Access badge ── */
+.oa-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: #e6f4ea;
+  color: #1a7f37;
+  border: 1px solid #a8d5b5;
+  padding: 0.1rem 0.45rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-decoration: none;
+  vertical-align: middle;
+  margin-left: 0.4rem;
+  transition: background 0.2s;
+}
+.oa-badge:hover {
+  background: #d0ecda;
+  text-decoration: none;
+}
+
+/* ── Publication filter buttons ── */
+.pub-filter-btn {
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  background: #f1f5f9;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s;
+}
+.pub-filter-btn:hover {
+  background: #e2e8f0;
+}
+
+/* ── BibTeX copy button ── */
+.bibtex-btn {
+  margin-top: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #2563eb;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.bibtex-btn:hover {
+  color: var(--color-primary);
+}
+
+/* ── Teaching table ── */
+.teaching-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+.teaching-table th {
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  background: var(--color-secondary);
+  color: white;
+  font-weight: 600;
+}
+.teaching-table td {
+  padding: 0.45rem 0.75rem;
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: top;
+}
+.teaching-table tr:last-child td {
+  border-bottom: none;
+}
+.teaching-table tr:hover td {
+  background: #f8fafc;
+}
