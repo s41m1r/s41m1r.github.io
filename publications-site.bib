@@ -1,0 +1,223 @@
+% Website overlay on top of mypapers.bib (the DBLP export).
+%
+% An entry whose key matches one in mypapers.bib PATCHES that entry: only the
+% fields listed here are changed, everything else comes from DBLP. An entry with
+% a key DBLP does not have is ADDED to the list. Nothing here has to be repeated
+% when mypapers.bib is re-exported, so refreshing DBLP is a one-file replacement.
+%
+% Fields:
+%   venue       short display name, replacing DBLP's long booktitle/abbreviation
+%   pubkind     caption above the title (default: Journal Article / Conference
+%               Proceedings / Book Chapter / Dataset), e.g. "Workshop Paper"
+%   oa          URL of an open-access version -> green "Open Access" badge
+%   preprint    URL or repo path of a preprint -> orange "Preprint" badge
+%               (an arXiv entry in DBLP is attached automatically)
+%   award       award text -> highlighted card, e.g. "Best Paper Award — ..."
+%   selected    "true" puts the paper in the Selected Publications section
+%   shortvenue  compact venue name used in the Selected Publications header
+%   category    journal | conference | chapter | preprint | dataset
+%   <any field> overrides the DBLP value; an empty value {} removes the field
+%
+% Entries are grouped by category and sorted newest first automatically, and the
+% (J1)/(C7)/(Ch2) index labels are generated, so do not hardcode them.
+% Rebuild with: python3 scripts/build_publications.py
+
+% ============================ JOURNAL ARTICLES ============================
+
+@patch{DBLP:journals/procsci/KabierskiBPSB26,
+  venue     = {Process Science},
+  oa        = {https://link.springer.com/article/10.1007/s44311-026-00043-x},
+  preprint  = {https://www.researchsquare.com/article/rs-6941537/v1}
+}
+
+@patch{DBLP:journals/bpmj/NovakPBRM23,
+  venue      = {Business Process Management Journal},
+  oa         = {https://www.emerald.com/bpmj/article/29/8/230/258190/Enhancing-decision-making-of-IT-demand-management},
+  selected   = {true},
+  shortvenue = {Business Process Management Journal}
+}
+
+@patch{DBLP:journals/smr/VavpoticBMH22,
+  venue     = {Journal of Software: Evolution and Process}
+}
+
+@patch{DBLP:journals/sosym/VidgofDBM22,
+  venue     = {Software and Systems Modeling}
+}
+
+% =================== CONFERENCE & WORKSHOP PROCEEDINGS ===================
+
+@patch{DBLP:conf/bpm/AzemiB25,
+  venue     = {BPM Industry & Society Forum},
+  pubkind   = {Industry Forum Paper},
+  oa        = {https://ceur-ws.org/Vol-4033/paper-01.pdf}
+}
+
+@patch{DBLP:conf/bpm/ParschewB25,
+  venue     = {AI4BPM @ BPM Workshops},
+  pubkind   = {Workshop Paper},
+  preprint  = {papers/C3-predicting-file-completion-AI4BPM2025.pdf}
+}
+
+@patch{DBLP:conf/bpm/RevoredoBS25,
+  venue      = {Business Process Management Forum},
+  selected   = {true},
+  shortvenue = {BPM Forum}
+}
+
+@patch{DBLP:conf/bpm/RevoredoB24,
+  venue     = {BPM (Blockchain and RPA Forum)},
+  pubkind   = {Forum Paper}
+}
+
+@patch{DBLP:conf/edoc/BalaJM24,
+  venue     = {EDOC Workshops},
+  pubkind   = {Workshop Paper}
+}
+
+@patch{DBLP:conf/edoc/Fahrenkrog-Petersen24,
+  venue     = {EDOC Workshops},
+  pubkind   = {Workshop Paper}
+}
+
+@patch{DBLP:conf/icpm/BasmerKSPBM24,
+  venue      = {ICPM Workshops},
+  pubkind    = {Workshop Paper},
+  award      = {Best Paper Award — EDBA Workshop @ ICPM 2024},
+  selected   = {true},
+  shortvenue = {ICPM}
+}
+
+@patch{DBLP:conf/icpm/MoyanoKBFM24,
+  venue     = {ICPM Workshops},
+  pubkind   = {Workshop Paper}
+}
+
+@patch{DBLP:conf/modelsward/NguyenBM24,
+  venue     = {MODELSWARD}
+}
+
+@patch{DBLP:conf/xpu/BalaSHM24,
+  venue     = {XP Workshops},
+  pubkind   = {Workshop Paper}
+}
+
+@patch{DBLP:conf/icpm/BalaRM22,
+  venue     = {ICPM Workshops},
+  pubkind   = {Workshop Paper}
+}
+
+@patch{DBLP:conf/caise/VidgofDBM20,
+  venue     = {BPMDS/EMMSAD @ CAiSE}
+}
+
+@patch{DBLP:conf/icpm/WaibelNBRM20,
+  venue     = {ICPM Workshops},
+  pubkind   = {Workshop Paper}
+}
+
+@patch{DBLP:conf/ifip8-1/BalaKM20,
+  venue     = {PoEM (Forum)},
+  pubkind   = {Forum Paper},
+  oa        = {https://ceur-ws.org/Vol-2793/paper6.pdf}
+}
+
+@patch{DBLP:conf/bpm/AzemiB19,
+  venue     = {BPM Industry Forum},
+  pubkind   = {Industry Forum Paper},
+  oa        = {https://ceur-ws.org/Vol-2428/paper4.pdf}
+}
+
+@patch{DBLP:conf/bmsd/BalaM18,
+  venue     = {BMSD}
+}
+
+@patch{DBLP:conf/ifip8-1/BalaMSQ18,
+  venue     = {PoEM}
+}
+
+@patch{DBLP:conf/bpm/BalaRGBMS17,
+  venue     = {BPM}
+}
+
+@patch{DBLP:conf/emisa/Bala17,
+  venue     = {RADAR+EMISA @ CAiSE},
+  pubkind   = {Workshop Paper},
+  oa        = {https://ceur-ws.org/Vol-1859/emisa-01-paper.pdf}
+}
+
+@patch{DBLP:conf/bpm/BalaHSSHMP16,
+  venue     = {BPM (Demos)},
+  pubkind   = {Demo Paper},
+  oa        = {https://ceur-ws.org/Vol-1789/bpm-demo-2016-paper10.pdf}
+}
+
+@patch{DBLP:conf/edoc/AgrawalATBRT16,
+  venue     = {EDOC Workshops},
+  pubkind   = {Workshop Paper}
+}
+
+@patch{DBLP:conf/bpm/BalaCMRP15,
+  venue     = {BPM}
+}
+
+@patch{DBLP:conf/simpda/BalaCHHMPSS15,
+  venue     = {SIMPDA},
+  pubkind   = {Revised Selected Papers}
+}
+
+% Not in the DBLP export — kept here as a full entry.
+@inproceedings{bala2025sidetracking,
+  title      = {Analyzing Side-Tracking of Developers Using Object-Centric Process Mining},
+  author     = {Saimir Bala and Thanh Nguyen and Jan Mendling},
+  venue      = {Model-Based Software and Systems Engineering},
+  booktitle  = {Model-Based Software and Systems Engineering},
+  series     = {Communications in Computer and Information Science},
+  volume     = {2547},
+  publisher  = {Springer},
+  year       = {2025},
+  url        = {https://link.springer.com/chapter/10.1007/978-3-031-96841-9_2},
+  preprint   = {papers/C2-sidetracking-CCIS2025.pdf},
+  selected   = {true},
+  shortvenue = {MODELSWARD/MBSE}
+}
+
+% ============================== BOOK CHAPTERS ==============================
+
+@patch{DBLP:books/sp/21/AzemiB21,
+  venue     = {Business Process Management Cases (2)}
+}
+
+@patch{DBLP:books/sp/18/WolinskiB18,
+  venue     = {Business Process Management Cases},
+  series    = {}
+}
+
+% Not in the DBLP export — kept here as a full entry.
+@incollection{wurm2021springest,
+  title     = {The Springest Story: How IT Enables Holacratic Organizations},
+  author    = {B. Wurm and R. A. Minnaar and J. Mendling and M. Hallmann and S. Bala and W. Kremser and E. Strauss},
+  venue     = {Digitalization Cases Vol. 2},
+  booktitle = {Digitalization Cases Vol. 2},
+  publisher = {Springer},
+  pages     = {327--342},
+  year      = {2021}
+}
+
+% ================================ PREPRINTS ================================
+
+@patch{DBLP:journals/corr/abs-2607-04948,
+  venue     = {arXiv},
+  volume    = {},
+  pubkind   = {Preprint},
+  preprint  = {https://arxiv.org/abs/2607.04948}
+}
+
+% ========================= DATASETS & SOFTWARE =========================
+
+@patch{DBLP:data/12/BalaSW26,
+  venue     = {Zenodo},
+  publisher = {},
+  pubkind   = {Dataset},
+  note      = {Replication package}
+}

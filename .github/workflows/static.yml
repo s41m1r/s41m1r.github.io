@@ -34,6 +34,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          # Branch tip, not the triggering commit: when this workflow is called
+          # by scholar.yml / publications.yml the generated commit is newer.
+          ref: ${{ github.ref_name }}
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact

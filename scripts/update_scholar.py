@@ -25,8 +25,9 @@ USER_ID = os.environ.get("SCHOLAR_USER_ID", "ZR0Bo_QAAAAJ")
 PROFILE_URL = "https://scholar.google.com/citations?user={uid}&hl=en&cstart={start}&pagesize=100"
 OUT_FILE = pathlib.Path(__file__).resolve().parent.parent / "scholar.json"
 
-# "scholar" makes the Publications tile mirror Scholar's article count,
-# "manual" keeps whatever publications value is already in scholar.json.
+# "manual" (default) keeps the publications count already in scholar.json, which
+# scripts/build_publications.py derives from the .bib files; "scholar" makes the
+# Publications tile mirror Scholar's raw article count instead.
 PUBLICATIONS_SOURCE = os.environ.get("SCHOLAR_PUBLICATIONS_SOURCE", "manual")
 
 USER_AGENTS = [
