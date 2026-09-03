@@ -1,0 +1,56 @@
+# Keeps scholar.json in sync with the Google Scholar profile
+name: Update Google Scholar metrics
+
+on:
+  schedule:
+    # Every day at 04:23 UTC (off-peak, avoids the top of the hour rush)
+    - cron: "23 4 * * *"
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    outputs:
+      changed: ${{ steps.commit.outputs.changed }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fetch metrics from Google Scholar
+        run: python3 scripts/update_scholar.py
+
+      - name: Commit updated metrics
+        id: commit
+        run: |
+          if git diff --quiet -- scholar.json; then
+            echo "scholar.json unchanged"
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add scholar.json
+          git commit -m "chore: update Google Scholar metrics"
+          git push
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+  # A push made with GITHUB_TOKEN does not trigger other workflows,
+  # so the Pages deployment has to be called explicitly.
+  deploy:
+    needs: update
+    if: needs.update.outputs.changed == 'true'
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    uses: ./.github/workflows/static.yml

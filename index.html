@@ -102,20 +102,20 @@
                     Hasso Plattner Institute (HPI), University of Potsdam, Germany
                 </p>
                 
-                <!-- Citation metrics -->
-                <a href="https://scholar.google.com/citations?user=ZR0Bo_QAAAAJ&hl=en" target="_blank" class="w-full flex border border-[var(--color-border)] rounded-lg overflow-hidden text-center text-xs hover:border-primary transition-colors duration-200 mb-4 no-underline">
+                <!-- Citation metrics (numbers come from scholar.json, refreshed daily by .github/workflows/scholar.yml) -->
+                <a id="scholar-metrics" href="https://scholar.google.com/citations?user=ZR0Bo_QAAAAJ&hl=en" target="_blank" class="w-full flex border border-[var(--color-border)] rounded-lg overflow-hidden text-center text-xs hover:border-primary transition-colors duration-200 mb-4 no-underline">
                     <div class="flex-1 py-2 px-1 bg-gray-50 hover:bg-white">
-                        <div class="font-extrabold text-secondary text-base">277</div>
+                        <div class="font-extrabold text-secondary text-base" data-scholar="citations">289</div>
                         <div class="text-gray-500">Citations</div>
                     </div>
                     <div class="w-px bg-[var(--color-border)]"></div>
                     <div class="flex-1 py-2 px-1 bg-gray-50 hover:bg-white">
-                        <div class="font-extrabold text-secondary text-base">10</div>
+                        <div class="font-extrabold text-secondary text-base" data-scholar="h_index">10</div>
                         <div class="text-gray-500">h-index</div>
                     </div>
                     <div class="w-px bg-[var(--color-border)]"></div>
                     <div class="flex-1 py-2 px-1 bg-gray-50 hover:bg-white">
-                        <div class="font-extrabold text-secondary text-base">31</div>
+                        <div class="font-extrabold text-secondary text-base" data-scholar="publications">31</div>
                         <div class="text-gray-500">Publications</div>
                     </div>
                 </a>
@@ -1259,6 +1259,32 @@
           }
         });
         btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+      })();
+    </script>
+    <script>
+      // Citation metrics: scholar.json is refreshed daily from Google Scholar by a
+      // GitHub Action. If it cannot be loaded, the numbers in the markup stay.
+      (function() {
+        const box = document.getElementById('scholar-metrics');
+        if (!box) return;
+        fetch('scholar.json?t=' + Date.now(), { cache: 'no-store' })
+          .then(response => response.ok ? response.json() : Promise.reject(response.status))
+          .then(data => {
+            box.querySelectorAll('[data-scholar]').forEach(el => {
+              const value = data[el.dataset.scholar];
+              if (typeof value === 'number' && value > 0) {
+                el.textContent = value.toLocaleString('en-US');
+              }
+            });
+            if (data.updated) {
+              const date = new Date(data.updated);
+              if (!isNaN(date)) {
+                box.title = 'Google Scholar metrics, last updated ' +
+                  date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+              }
+            }
+          })
+          .catch(() => {});
       })();
     </script>
 </body>
