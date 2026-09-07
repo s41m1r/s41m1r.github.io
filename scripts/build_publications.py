@@ -39,7 +39,7 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 SOURCE_FILE = ROOT / "mypapers.bib"
 OVERLAY_FILE = ROOT / "publications-site.bib"
 HTML_FILE = ROOT / "index.html"
-SCHOLAR_FILE = ROOT / "scholar.json"
+METRICS_FILE = ROOT / "metrics.json"
 
 # Author whose name is highlighted in the author lists.
 OWNER_LAST_NAME = "Bala"
@@ -190,7 +190,18 @@ def load_entries():
         for required in ("title", "author"):
             if not entry.get(required):
                 raise SystemExit(f"{entry['_key']}: missing required field '{required}'")
-    return merge_preprints(entries)
+    merged = merge_preprints(entries)
+
+    seen = {}
+    for entry in merged:
+        seen.setdefault(normalized_title(entry), []).append(entry["_key"])
+    for keys in seen.values():
+        if len(keys) > 1:
+            raise SystemExit(
+                "the same title is listed twice: " + ", ".join(keys)
+                + " — if DBLP now has the paper, drop the entry from publications-site.bib"
+            )
+    return merged
 
 
 def normalized_title(entry):
@@ -393,7 +404,9 @@ def caption(entry):
 def render_full_item(entry, label):
     indent = "    "
     return (
-        f'{indent}<div class="{item_classes(entry)}" data-type="{category_of(entry)}">\n'
+        f'{indent}<div class="{item_classes(entry)}" data-type="{category_of(entry)}"'
+        f' data-year="{entry.get("year", "")}"'
+        f' data-title="{html.escape(entry["title"].lower(), quote=True)}">\n'
         + award_block(entry, indent + "  ")
         + f'{indent}  <p class="text-xs font-bold uppercase text-primary mb-1">'
         f'{html.escape(caption(entry))} ({label})</p>\n'
@@ -462,14 +475,18 @@ def main():
             raise SystemExit(f"{entry['_key']}: unknown category '{category}'")
         groups[category].append(entry)
 
-    full_html = []
-    for category, heading, prefix, _ in GROUPS:
-        items = sorted(groups[category], key=sort_key)
-        if not items:
-            continue
-        full_html.append(f"    <!-- ================= {heading} ================= -->\n")
-        for index, entry in enumerate(items, start=1):
-            full_html.append(render_full_item(entry, f"{prefix}{index}"))
+    labels = {}
+    for category, _, prefix, _ in GROUPS:
+        for index, entry in enumerate(sorted(groups[category], key=sort_key), start=1):
+            labels[id(entry)] = f"{prefix}{index}"
+
+    # Newest first across every category; the sort control in index.html can
+    # regroup by type, flip the direction, or order by title.
+    full_html = [
+        "    <!-- newest first; re-sorted client-side by the Sort control -->\n"
+    ]
+    for entry in sorted(entries, key=sort_key):
+        full_html.append(render_full_item(entry, labels[id(entry)]))
 
     filters = ['    <button class="pub-filter-btn" data-filter="all" data-label="All">All</button>\n']
     for category, _, _, label in GROUPS:
@@ -490,11 +507,11 @@ def main():
     HTML_FILE.write_text(page, encoding="utf-8")
 
     # The publication count in the metrics tile follows the list.
-    if SCHOLAR_FILE.exists():
-        scholar = json.loads(SCHOLAR_FILE.read_text())
-        if scholar.get("publications") != len(entries):
-            scholar["publications"] = len(entries)
-            SCHOLAR_FILE.write_text(json.dumps(scholar, indent=2) + "\n")
+    if METRICS_FILE.exists():
+        metrics = json.loads(METRICS_FILE.read_text())
+        if metrics.get("publications") != len(entries):
+            metrics["publications"] = len(entries)
+            METRICS_FILE.write_text(json.dumps(metrics, indent=2) + "\n")
 
     counts = ", ".join(f"{len(groups[c])} {c}" for c, _, _, _ in GROUPS if groups[c])
     print(f"index.html updated: {len(entries)} entries ({counts}), {len(selected)} selected")

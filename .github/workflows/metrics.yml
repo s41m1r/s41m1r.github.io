@@ -1,5 +1,5 @@
-# Keeps scholar.json in sync with the Google Scholar profile
-name: Update Google Scholar metrics
+# Keeps metrics.json in sync with the OpenAlex author record
+name: Update citation metrics
 
 on:
   schedule:
@@ -19,28 +19,28 @@ jobs:
       changed: ${{ steps.commit.outputs.changed }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: "3.12"
 
-      - name: Fetch metrics from Google Scholar
-        run: python3 scripts/update_scholar.py
+      - name: Fetch metrics from OpenAlex
+        run: python3 scripts/update_metrics.py
 
       - name: Commit updated metrics
         id: commit
         run: |
-          if git diff --quiet -- scholar.json; then
-            echo "scholar.json unchanged"
+          if git diff --quiet -- metrics.json; then
+            echo "metrics.json unchanged"
             echo "changed=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add scholar.json
-          git commit -m "chore: update Google Scholar metrics"
+          git add metrics.json
+          git commit -m "chore: update citation metrics"
           git push
           echo "changed=true" >> "$GITHUB_OUTPUT"
 

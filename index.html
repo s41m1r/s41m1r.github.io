@@ -102,23 +102,28 @@
                     Hasso Plattner Institute (HPI), University of Potsdam, Germany
                 </p>
                 
-                <!-- Citation metrics (numbers come from scholar.json, refreshed daily by .github/workflows/scholar.yml) -->
-                <a id="scholar-metrics" href="https://scholar.google.com/citations?user=ZR0Bo_QAAAAJ&hl=en" target="_blank" class="w-full flex border border-[var(--color-border)] rounded-lg overflow-hidden text-center text-xs hover:border-primary transition-colors duration-200 mb-4 no-underline">
+                <!-- Citation metrics (numbers come from metrics.json, refreshed daily by .github/workflows/metrics.yml) -->
+                <a id="citation-metrics" href="https://openalex.org/A5023113061" target="_blank" class="w-full flex border border-[var(--color-border)] rounded-lg overflow-hidden text-center text-xs hover:border-primary transition-colors duration-200 mb-1.5 no-underline">
                     <div class="flex-1 py-2 px-1 bg-gray-50 hover:bg-white">
-                        <div class="font-extrabold text-secondary text-base" data-scholar="citations">289</div>
+                        <div class="font-extrabold text-secondary text-base" data-metric="citations">203</div>
                         <div class="text-gray-500">Citations</div>
                     </div>
                     <div class="w-px bg-[var(--color-border)]"></div>
                     <div class="flex-1 py-2 px-1 bg-gray-50 hover:bg-white">
-                        <div class="font-extrabold text-secondary text-base" data-scholar="h_index">10</div>
+                        <div class="font-extrabold text-secondary text-base" data-metric="h_index">10</div>
                         <div class="text-gray-500">h-index</div>
                     </div>
                     <div class="w-px bg-[var(--color-border)]"></div>
                     <div class="flex-1 py-2 px-1 bg-gray-50 hover:bg-white">
-                        <div class="font-extrabold text-secondary text-base" data-scholar="publications">31</div>
+                        <div class="font-extrabold text-secondary text-base" data-metric="publications">34</div>
                         <div class="text-gray-500">Publications</div>
                     </div>
                 </a>
+                <p class="text-xs text-gray-500 mb-4 text-center md:text-left">
+                    Citations, h-index and i10-index from
+                    <a href="https://openalex.org/A5023113061" target="_blank" class="pro-link">OpenAlex</a><span data-metric-updated></span>.
+                    Publications counted from this page's list.
+                </p>
 
                 <!-- Quick Contact and Links -->
                 <div class="w-full space-y-3 text-sm">
@@ -256,6 +261,15 @@
                 </div>
 
                 <div class="publication-item">
+                  <p class="text-xs font-bold uppercase text-primary mb-1">Conference &mdash; BPM, Springer, 2026</p>
+                  <p class="font-semibold text-lg text-gray-800">
+                    AI-Assisted Event Log Generation for Process Mining in Healthcare.
+                    <a href="papers/BPM2026-ai-assisted-event-log-generation.pdf" target="_blank" class="oa-badge" style="background:#fff7ed;color:#c2410c;border-color:#fed7aa;" title="Freely available preprint"><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg> Preprint</a>
+                  </p>
+                  <p class="text-sm text-gray-600 italic"><span class="font-bold">S. Bala</span>, Z. Soleimani, M. Weske. <span class="font-bold">BPM</span>, Springer, to appear, 2026.</p>
+                </div>
+
+                <div class="publication-item">
                   <p class="text-xs font-bold uppercase text-primary mb-1">Conference &mdash; BPM Forum, Springer, 2025</p>
                   <p class="font-semibold text-lg text-gray-800">
                     FairPM: A Taxonomy of Bias and Interventions in Process Mining.
@@ -272,19 +286,6 @@
                     <a href="papers/C2-sidetracking-CCIS2025.pdf" target="_blank" class="oa-badge" style="background:#fff7ed;color:#c2410c;border-color:#fed7aa;" title="Freely available preprint"><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg> Preprint</a>
                   </p>
                   <p class="text-sm text-gray-600 italic"><span class="font-bold">S. Bala</span>, T. Nguyen, J. Mendling. <span class="font-bold">Model-Based Software and Systems Engineering</span>, CCIS 2547, Springer, 2025.</p>
-                </div>
-
-                <div class="publication-item border-l-4 border-yellow-500 bg-yellow-50">
-                  <div class="flex items-center gap-1.5 mb-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-600 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>
-                    <span class="text-xs font-bold text-yellow-700 uppercase tracking-wide">Best Paper Award — EDBA Workshop @ ICPM 2024</span>
-                  </div>
-                  <p class="text-xs font-bold uppercase text-primary mb-1">Workshop &mdash; ICPM, Springer, 2024</p>
-                  <p class="font-semibold text-lg text-gray-800">
-                    A Classification of Data Quality Issues in Object-Centric Event Data.
-                    <a href="https://doi.org/10.1007/978-3-031-82225-4_23" target="_blank" class="pub-ext-link" title="Read paper"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
-                  </p>
-                  <p class="text-sm text-gray-600 italic">M. Basmer, M. Kabierski, K. Sahling, A. Patecka, <span class="font-bold">S. Bala</span>, J. Mendling. <span class="font-bold">ICPM Workshops</span>, LNBIP 533, Springer, 2024, pp. 311–323.</p>
                 </div>
 
                 <div class="publication-item">
@@ -316,7 +317,7 @@
   <h2 class="section-header">Complete Publication List</h2>
 
   <!-- FILTERS -->
-  <div class="flex flex-wrap gap-3 mb-8">
+  <div class="flex flex-wrap items-center gap-3 mb-8">
     <!-- publications:filters:start -->
     <button class="pub-filter-btn" data-filter="all" data-label="All">All</button>
     <button class="pub-filter-btn" data-filter="journal" data-label="Journals">Journals</button>
@@ -325,13 +326,22 @@
     <button class="pub-filter-btn" data-filter="preprint" data-label="Preprints">Preprints</button>
     <button class="pub-filter-btn" data-filter="dataset" data-label="Datasets">Datasets</button>
     <!-- publications:filters:end -->
+    <label class="pub-sort ml-auto" for="pub-sort">
+      Sort by
+      <select id="pub-sort">
+        <option value="year-desc">Year (newest first)</option>
+        <option value="year-asc">Year (oldest first)</option>
+        <option value="type">Type</option>
+        <option value="title">Title (A–Z)</option>
+      </select>
+    </label>
   </div>
 
   <div class="space-y-5">
     <!-- publications:full:start -->
-    <!-- ================= JOURNAL ARTICLES ================= -->
+    <!-- newest first; re-sorted client-side by the Sort control -->
 
-    <div class="publication-item" data-type="journal">
+    <div class="publication-item" data-type="journal" data-year="2026" data-title="data quality in object-centric event data: issues classification and evaluation">
       <p class="text-xs font-bold uppercase text-primary mb-1">Journal Article (J1)</p>
       <p class="font-semibold text-lg text-gray-800">
         Data quality in object-centric event data: issues classification and evaluation.
@@ -355,79 +365,73 @@
 }">BibTeX</button>
     </div>
 
-    <div class="publication-item" data-type="journal">
-      <p class="text-xs font-bold uppercase text-primary mb-1">Journal Article (J2)</p>
+    <div class="publication-item" data-type="dataset" data-year="2026" data-title="ai-assisted event log extraction for process mining in healthcare (replication package) (version 1)">
+      <p class="text-xs font-bold uppercase text-primary mb-1">Dataset (D1)</p>
       <p class="font-semibold text-lg text-gray-800">
-        Enhancing decision-making of IT demand management with process mining.
-        <a href="https://doi.org/10.1108/BPMJ-12-2022-0631" target="_blank" class="pub-ext-link" title="Read paper"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
-        <a href="https://www.emerald.com/bpmj/article/29/8/230/258190/Enhancing-decision-making-of-IT-demand-management" target="_blank" class="oa-badge" title="Open Access"><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg> Open Access</a>
+        AI-Assisted Event Log Extraction for Process Mining in Healthcare (Replication Package) (Version 1).
+        <a href="https://doi.org/10.5281/zenodo.20425398" target="_blank" class="pub-ext-link" title="Read paper"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
       </p>
       <p class="text-sm text-gray-600 italic">
-        Christian Novak, Lukas Pfahlsberger, <span class="font-bold">Saimir Bala</span>, Kate Revoredo, Jan Mendling.
-        <span class="font-bold">Business Process Management Journal</span>, 29(8), 2023, pp. 230–259.
+        <span class="font-bold">Saimir Bala</span>, Zeinab Soleimani, Mathias Weske.
+        <span class="font-bold">Zenodo</span>, Replication package, May 2026.
       </p>
-      <button class="bibtex-btn" type="button" data-bibtex="@article{DBLP:journals/bpmj/NovakPBRM23,
-  author = {Christian Novak and Lukas Pfahlsberger and Saimir Bala and Kate Revoredo and Jan Mendling},
-  title = {Enhancing decision-making of IT demand management with process mining},
-  journal = {Bus. Process. Manag. J.},
-  volume = {29},
-  number = {8},
-  pages = {230--259},
-  year = {2023},
-  url = {https://doi.org/10.1108/BPMJ-12-2022-0631},
-  doi = {10.1108/BPMJ-12-2022-0631}
+      <button class="bibtex-btn" type="button" data-bibtex="@misc{DBLP:data/12/BalaSW26,
+  author = {Saimir Bala and Zeinab Soleimani and Mathias Weske},
+  title = {AI-Assisted Event Log Extraction for Process Mining in Healthcare (Replication Package) (Version 1)},
+  year = {2026},
+  month = {may},
+  howpublished = {r̆lhttps://doi.org/10.5281/zenodo.20425398},
+  note = {Replication package},
+  url = {https://doi.org/10.5281/zenodo.20425398},
+  doi = {10.5281/ZENODO.20425398}
 }">BibTeX</button>
     </div>
 
-    <div class="publication-item" data-type="journal">
-      <p class="text-xs font-bold uppercase text-primary mb-1">Journal Article (J3)</p>
+    <div class="publication-item" data-type="preprint" data-year="2026" data-title="using process mining to generate ai agents from software engineering process records">
+      <p class="text-xs font-bold uppercase text-primary mb-1">Preprint (P1)</p>
       <p class="font-semibold text-lg text-gray-800">
-        Software Process Evaluation from User Perceptions and Log Data.
-        <a href="https://doi.org/10.1002/smr.2438" target="_blank" class="pub-ext-link" title="Read paper"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+        Using Process Mining to Generate AI Agents from Software Engineering Process Records.
+        <a href="https://doi.org/10.48550/arXiv.2607.04948" target="_blank" class="pub-ext-link" title="Read paper"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+        <a href="https://arxiv.org/abs/2607.04948" target="_blank" class="oa-badge" style="background:#fff7ed;color:#c2410c;border-color:#fed7aa;" title="Free preprint on arXiv"><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg> Preprint</a>
       </p>
       <p class="text-sm text-gray-600 italic">
-        Damjan Vavpotic, <span class="font-bold">Saimir Bala</span>, Jan Mendling, Tomaz Hovelja.
-        <span class="font-bold">Journal of Software: Evolution and Process</span>, 34(4), 2022.
+        <span class="font-bold">Saimir Bala</span>, Fabiana Fournier, Lior Limonad, Andreas Metzger.
+        <span class="font-bold">arXiv</span>, 2026.
       </p>
-      <button class="bibtex-btn" type="button" data-bibtex="@article{DBLP:journals/smr/VavpoticBMH22,
-  author = {Damjan Vavpotic and Saimir Bala and Jan Mendling and Tomaz Hovelja},
-  title = {Software Process Evaluation from User Perceptions and Log Data},
-  journal = {J. Softw. Evol. Process.},
-  volume = {34},
-  number = {4},
-  year = {2022},
-  url = {https://doi.org/10.1002/smr.2438},
-  doi = {10.1002/SMR.2438}
+      <button class="bibtex-btn" type="button" data-bibtex="@article{DBLP:journals/corr/abs-2607-04948,
+  author = {Saimir Bala and Fabiana Fournier and Lior Limonad and Andreas Metzger},
+  title = {Using Process Mining to Generate AI Agents from Software Engineering Process Records},
+  journal = {CoRR},
+  year = {2026},
+  url = {https://doi.org/10.48550/arXiv.2607.04948},
+  doi = {10.48550/ARXIV.2607.04948},
+  eprinttype = {arXiv},
+  eprint = {2607.04948}
 }">BibTeX</button>
     </div>
 
-    <div class="publication-item" data-type="journal">
-      <p class="text-xs font-bold uppercase text-primary mb-1">Journal Article (J4)</p>
+    <div class="publication-item" data-type="conference" data-year="2026" data-title="ai-assisted event log generation for process mining in healthcare">
+      <p class="text-xs font-bold uppercase text-primary mb-1">Conference Proceedings (C1)</p>
       <p class="font-semibold text-lg text-gray-800">
-        Interactive log-delta analysis using multi-range filtering.
-        <a href="https://doi.org/10.1007/s10270-021-00902-0" target="_blank" class="pub-ext-link" title="Read paper"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+        AI-Assisted Event Log Generation for Process Mining in Healthcare.
+        <a href="papers/BPM2026-ai-assisted-event-log-generation.pdf" target="_blank" class="oa-badge" style="background:#fff7ed;color:#c2410c;border-color:#fed7aa;" title="Freely available preprint"><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg> Preprint</a>
       </p>
       <p class="text-sm text-gray-600 italic">
-        Maxim Vidgof, Djordje Djurica, <span class="font-bold">Saimir Bala</span>, Jan Mendling.
-        <span class="font-bold">Software and Systems Modeling</span>, 21(3), 2022, pp. 847–868.
+        <span class="font-bold">Saimir Bala</span>, Zeinab Soleimani, Mathias Weske.
+        <span class="font-bold">BPM</span>, Springer, to appear, 2026.
       </p>
-      <button class="bibtex-btn" type="button" data-bibtex="@article{DBLP:journals/sosym/VidgofDBM22,
-  author = {Maxim Vidgof and Djordje Djurica and Saimir Bala and Jan Mendling},
-  title = {Interactive log-delta analysis using multi-range filtering},
-  journal = {Softw. Syst. Model.},
-  volume = {21},
-  number = {3},
-  pages = {847--868},
-  year = {2022},
-  url = {https://doi.org/10.1007/s10270-021-00902-0},
-  doi = {10.1007/S10270-021-00902-0}
+      <button class="bibtex-btn" type="button" data-bibtex="@inproceedings{bala2026elgai,
+  title = {AI-Assisted Event Log Generation for Process Mining in Healthcare},
+  author = {Saimir Bala and Zeinab Soleimani and Mathias Weske},
+  booktitle = {Business Process Management},
+  publisher = {Springer},
+  note = {to appear},
+  year = {2026}
 }">BibTeX</button>
     </div>
 
-    <!-- ================= CONFERENCE &amp; WORKSHOP PROCEEDINGS ================= -->
-
-    <div class="publication-item" data-type="conference">
-      <p class="text-xs font-bold uppercase text-primary mb-1">Industry Forum Paper (C1)</p>
+    <div class="publication-item" data-type="conference" data-year="2025" data-title="automating financial reconciliation: leveraging rpa for efficiency and accuracy in banking operations">
+      <p class="text-xs font-bold uppercase text-primary mb-1">Industry Forum Paper (C2)</p>
       <p class="font-semibold text-lg text-gray-800">
         Automating Financial Reconciliation: Leveraging RPA for Efficiency and Accuracy in Banking Operations.
         <a href="https://ceur-ws.org/Vol-4033/paper-01.pdf" target="_blank" class="pub-ext-link" title="Read paper"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
@@ -451,8 +455,8 @@
 }">BibTeX</button>
     </div>
 
-    <div class="publication-item" data-type="conference">
-      <p class="text-xs font-bold uppercase text-primary mb-1">Workshop Paper (C2)</p>
+    <div class="publication-item" data-type="conference" data-year="2025" data-title="predicting file completion using time series models: embracing the life-cycle nature of software development">
+      <p class="text-xs font-bold uppercase text-primary mb-1">Workshop Paper (C3)</p>
       <p class="font-semibold text-lg text-gray-800">
         Predicting File Completion Using Time Series Models: Embracing the Life-Cycle Nature of Software Development.
         <a href="https://doi.org/10.1007/978-3-032-13426-4_3" target="_blank" class="pub-ext-link" title="Read paper"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
@@ -477,8 +481,8 @@
 }">BibTeX</button>
     </div>
 
-    <div class="publication-item" data-type="conference">
-      <p class="text-xs font-bold uppercase text-primary mb-1">Conference Proceedings (C3)</p>
+    <div class="publication-item" data-type="conference" data-year="2025" data-title="fairpm: a taxonomy of bias and interventions in process mining">
+      <p class="text-xs font-bold uppercase text-primary mb-1">Conference Proceedings (C4)</p>
       <p class="font-semibold text-lg text-gray-800">
         FairPM: A Taxonomy of Bias and Interventions in Process Mining.
         <a href="https://doi.org/10.1007/978-3-032-02929-4_23" target="_blank" class="pub-ext-link" title="Read paper"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
@@ -502,8 +506,8 @@
 }">BibTeX</button>
     </div>
 
-    <div class="publication-item" data-type="conference">
-      <p class="text-xs font-bold uppercase text-primary mb-1">Conference Proceedings (C4)</p>
+    <div class="publication-item" data-type="conference" data-year="2025" data-title="analyzing side-tracking of developers using object-centric process mining">
+      <p class="text-xs font-bold uppercase text-primary mb-1">Conference Proceedings (C5)</p>
       <p class="font-semibold text-lg text-gray-800">
         Analyzing Side-Tracking of Developers Using Object-Centric Process Mining.
         <a href="https://link.springer.com/chapter/10.1007/978-3-031-96841-9_2" target="_blank" class="pub-ext-link" title="Read paper"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
@@ -525,8 +529,8 @@
 }">BibTeX</button>
     </div>
 
-    <div class="publication-item" data-type="conference">
-      <p class="text-xs font-bold uppercase text-primary mb-1">Forum Paper (C5)</p>
+    <div class="publication-item" data-type="conference" data-year="2024" data-title="project-based learning in bpm: lessons from flipped classroom vs. lecture-based instruction">
+      <p class="text-xs font-bold uppercase text-primary mb-1">Forum Paper (C6)</p>
       <p class="font-semibold text-lg text-gray-800">
         Project-Based Learning in BPM: Lessons from Flipped Classroom vs. Lecture-Based Instruction.
         <a href="https://doi.org/10.1007/978-3-031-70445-1_20" target="_blank" class="pub-ext-link" title="Read paper"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
@@ -550,8 +554,8 @@
 }">BibTeX</button>
     </div>
 
-    <div class="publication-item" data-type="conference">
-      <p class="text-xs font-bold uppercase text-primary mb-1">Workshop Paper (C6)</p>
+    <div class="publication-item" data-type="conference" data-year="2024" data-title="spotting the weasel at work: mining inappropriate behavior patterns in event logs">
+      <p class="text-xs font-bold uppercase text-primary mb-1">Workshop Paper (C7)</p>
       <p class="font-semibold text-lg text-gray-800">
         Spotting the Weasel at Work: Mining Inappropriate Behavior Patterns in Event Logs.
         <a href="https://doi.org/10.1007/978-3-031-79059-1_3" target="_blank" class="pub-ext-link" title="Read paper"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
@@ -575,8 +579,8 @@
 }">BibTeX</button>
     </div>
 
-    <div class="publication-item" data-type="conference">
-      <p class="text-xs font-bold uppercase text-primary mb-1">Workshop Paper (C7)</p>
+    <div class="publication-item" data-type="conference" data-year="2024" data-title="unraveling the never-ending story of lifecycles and vitalizing processes">
+      <p class="text-xs font-bold uppercase text-primary mb-1">Workshop Paper (C8)</p>
       <p class="font-semibold text-lg text-gray-800">
         Unraveling the Never-Ending Story of Lifecycles and Vitalizing Processes.
         <a href="https://doi.org/10.1007/978-3-031-79059-1_5" target="_blank" class="pub-ext-link" title="Read paper"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
@@ -601,12 +605,12 @@
 }">BibTeX</button>
     </div>
 
-    <div class="publication-item border-l-4 border-yellow-500 bg-yellow-50" data-type="conference">
+    <div class="publication-item border-l-4 border-yellow-500 bg-yellow-50" data-type="conference" data-year="2024" data-title="a classification of data quality issues in object-centric event data">
       <div class="flex items-center gap-1.5 mb-2">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-600 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>
         <span class="text-xs font-bold text-yellow-700 uppercase tracking-wide">Best Paper Award — EDBA Workshop @ ICPM 2024</span>
       </div>
-      <p class="text-xs font-bold uppercase text-primary mb-1">Workshop Paper (C8)</p>
+      <p class="text-xs font-bold uppercase text-primary mb-1">Workshop Paper (C9)</p>
       <p class="font-semibold text-lg text-gray-800">
         A Classification of Data Quality Issues in Object-Centric Event Data.
         <a href="https://doi.org/10.1007/978-3-031-82225-4_23" target="_blank" class="pub-ext-link" title="Read paper"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
@@ -630,8 +634,8 @@
 }">BibTeX</button>
     </div>
 
-    <div class="publication-item" data-type="conference">
-      <p class="text-xs font-bold uppercase text-primary mb-1">Workshop Paper (C9)</p>
+    <div class="publication-item" data-type="conference" data-year="2024" data-title="towards nudging in bpm: a human-centric approach for sustainable business processes">
+      <p class="text-xs font-bold uppercase text-primary mb-1">Workshop Paper (C10)</p>
       <p class="font-semibold text-lg text-gray-800">
         Towards Nudging in BPM: A Human-Centric Approach for Sustainable Business Processes.
         <a href="https://doi.org/10.1007/978-3-031-82225-4_54" target="_blank" class="pub-ext-link" title="Read paper"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
@@ -656,8 +660,8 @@
 }">BibTeX</button>
     </div>
 
-    <div class="publication-item" data-type="conference">
-      <p class="text-xs font-bold uppercase text-primary mb-1">Conference Proceedings (C10)</p>
+    <div class="publication-item" data-type="conference" data-year="2024" data-title="multi-dimensional process analysis of software development projects">
+      <p class="text-xs font-bold uppercase text-primary mb-1">Conference Proceedings (C11)</p>
       <p class="font-semibold text-lg text-gray-800">
         Multi-Dimensional Process Analysis of Software Development Projects.
       </p>
@@ -676,8 +680,8 @@
 }">BibTeX</button>
     </div>
 
-    <div class="publication-item" data-type="conference">
-      <p class="text-xs font-bold uppercase text-primary mb-1">Workshop Paper (C11)</p>
+    <div class="publication-item" data-type="conference" data-year="2024" data-title="chatgpt for tailoring software documentation for managers and developers">
+      <p class="text-xs font-bold uppercase text-primary mb-1">Workshop Paper (C12)</p>
       <p class="font-semibold text-lg text-gray-800">
         ChatGPT for Tailoring Software Documentation for Managers and Developers.
         <a href="https://doi.org/10.1007/978-3-031-72781-8_11" target="_blank" class="pub-ext-link" title="Read paper"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
@@ -701,8 +705,77 @@
 }">BibTeX</button>
     </div>
 
-    <div class="publication-item" data-type="conference">
-      <p class="text-xs font-bold uppercase text-primary mb-1">Workshop Paper (C12)</p>
+    <div class="publication-item" data-type="journal" data-year="2023" data-title="enhancing decision-making of it demand management with process mining">
+      <p class="text-xs font-bold uppercase text-primary mb-1">Journal Article (J2)</p>
+      <p class="font-semibold text-lg text-gray-800">
+        Enhancing decision-making of IT demand management with process mining.
+        <a href="https://doi.org/10.1108/BPMJ-12-2022-0631" target="_blank" class="pub-ext-link" title="Read paper"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+        <a href="https://www.emerald.com/bpmj/article/29/8/230/258190/Enhancing-decision-making-of-IT-demand-management" target="_blank" class="oa-badge" title="Open Access"><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg> Open Access</a>
+      </p>
+      <p class="text-sm text-gray-600 italic">
+        Christian Novak, Lukas Pfahlsberger, <span class="font-bold">Saimir Bala</span>, Kate Revoredo, Jan Mendling.
+        <span class="font-bold">Business Process Management Journal</span>, 29(8), 2023, pp. 230–259.
+      </p>
+      <button class="bibtex-btn" type="button" data-bibtex="@article{DBLP:journals/bpmj/NovakPBRM23,
+  author = {Christian Novak and Lukas Pfahlsberger and Saimir Bala and Kate Revoredo and Jan Mendling},
+  title = {Enhancing decision-making of IT demand management with process mining},
+  journal = {Bus. Process. Manag. J.},
+  volume = {29},
+  number = {8},
+  pages = {230--259},
+  year = {2023},
+  url = {https://doi.org/10.1108/BPMJ-12-2022-0631},
+  doi = {10.1108/BPMJ-12-2022-0631}
+}">BibTeX</button>
+    </div>
+
+    <div class="publication-item" data-type="journal" data-year="2022" data-title="software process evaluation from user perceptions and log data">
+      <p class="text-xs font-bold uppercase text-primary mb-1">Journal Article (J3)</p>
+      <p class="font-semibold text-lg text-gray-800">
+        Software Process Evaluation from User Perceptions and Log Data.
+        <a href="https://doi.org/10.1002/smr.2438" target="_blank" class="pub-ext-link" title="Read paper"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+      </p>
+      <p class="text-sm text-gray-600 italic">
+        Damjan Vavpotic, <span class="font-bold">Saimir Bala</span>, Jan Mendling, Tomaz Hovelja.
+        <span class="font-bold">Journal of Software: Evolution and Process</span>, 34(4), 2022.
+      </p>
+      <button class="bibtex-btn" type="button" data-bibtex="@article{DBLP:journals/smr/VavpoticBMH22,
+  author = {Damjan Vavpotic and Saimir Bala and Jan Mendling and Tomaz Hovelja},
+  title = {Software Process Evaluation from User Perceptions and Log Data},
+  journal = {J. Softw. Evol. Process.},
+  volume = {34},
+  number = {4},
+  year = {2022},
+  url = {https://doi.org/10.1002/smr.2438},
+  doi = {10.1002/SMR.2438}
+}">BibTeX</button>
+    </div>
+
+    <div class="publication-item" data-type="journal" data-year="2022" data-title="interactive log-delta analysis using multi-range filtering">
+      <p class="text-xs font-bold uppercase text-primary mb-1">Journal Article (J4)</p>
+      <p class="font-semibold text-lg text-gray-800">
+        Interactive log-delta analysis using multi-range filtering.
+        <a href="https://doi.org/10.1007/s10270-021-00902-0" target="_blank" class="pub-ext-link" title="Read paper"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+      </p>
+      <p class="text-sm text-gray-600 italic">
+        Maxim Vidgof, Djordje Djurica, <span class="font-bold">Saimir Bala</span>, Jan Mendling.
+        <span class="font-bold">Software and Systems Modeling</span>, 21(3), 2022, pp. 847–868.
+      </p>
+      <button class="bibtex-btn" type="button" data-bibtex="@article{DBLP:journals/sosym/VidgofDBM22,
+  author = {Maxim Vidgof and Djordje Djurica and Saimir Bala and Jan Mendling},
+  title = {Interactive log-delta analysis using multi-range filtering},
+  journal = {Softw. Syst. Model.},
+  volume = {21},
+  number = {3},
+  pages = {847--868},
+  year = {2022},
+  url = {https://doi.org/10.1007/s10270-021-00902-0},
+  doi = {10.1007/S10270-021-00902-0}
+}">BibTeX</button>
+    </div>
+
+    <div class="publication-item" data-type="conference" data-year="2022" data-title="process mining for analyzing open questions computer-aided examinations">
+      <p class="text-xs font-bold uppercase text-primary mb-1">Workshop Paper (C13)</p>
       <p class="font-semibold text-lg text-gray-800">
         Process Mining for Analyzing Open Questions Computer-Aided Examinations.
         <a href="https://doi.org/10.1007/978-3-031-27815-0_41" target="_blank" class="pub-ext-link" title="Read paper"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
@@ -726,8 +799,55 @@
 }">BibTeX</button>
     </div>
 
-    <div class="publication-item" data-type="conference">
-      <p class="text-xs font-bold uppercase text-primary mb-1">Conference Proceedings (C13)</p>
+    <div class="publication-item" data-type="chapter" data-year="2021" data-title="exploring bpm adoption and assessing the strategic alignment of processes at raiffeisen bank kosovo">
+      <p class="text-xs font-bold uppercase text-primary mb-1">Book Chapter (Ch1)</p>
+      <p class="font-semibold text-lg text-gray-800">
+        Exploring BPM Adoption and Assessing the Strategic Alignment of Processes at Raiffeisen Bank Kosovo.
+        <a href="https://doi.org/10.1007/978-3-662-63047-1_21" target="_blank" class="pub-ext-link" title="Read paper"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+      </p>
+      <p class="text-sm text-gray-600 italic">
+        Elheme Azemi, <span class="font-bold">Saimir Bala</span>.
+        <span class="font-bold">Business Process Management Cases (2)</span>, Springer, 2021, pp. 277–288.
+      </p>
+      <button class="bibtex-btn" type="button" data-bibtex="@incollection{DBLP:books/sp/21/AzemiB21,
+  author = {Elheme Azemi and Saimir Bala},
+  editor = {Jan vom Brocke and Jan Mendling and Michael Rosemann},
+  title = {Exploring BPM Adoption and Assessing the Strategic Alignment of Processes at Raiffeisen Bank Kosovo},
+  booktitle = {Business Process Management Cases Vol. 2, Digital Transformation - Strategy, Processes and Execution},
+  pages = {277--288},
+  publisher = {Springer},
+  year = {2021},
+  url = {https://doi.org/10.1007/978-3-662-63047-1_21},
+  doi = {10.1007/978-3-662-63047-1_21}
+}">BibTeX</button>
+    </div>
+
+    <div class="publication-item" data-type="chapter" data-year="2021" data-title="the springest story: how it enables holacratic organizations">
+      <p class="text-xs font-bold uppercase text-primary mb-1">Book Chapter (Ch2)</p>
+      <p class="font-semibold text-lg text-gray-800">
+        The Springest Story: How IT Enables Holacratic Organizations.
+        <a href="https://doi.org/10.1007/978-3-030-80003-1_17" target="_blank" class="pub-ext-link" title="Read paper"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+      </p>
+      <p class="text-sm text-gray-600 italic">
+        Bastian Wurm, Reinald A. Minnaar, Jan Mendling, Matt Hallmann, <span class="font-bold">Saimir Bala</span>, Waldemar Kremser, Erik Strauss.
+        <span class="font-bold">Digitalization Cases Vol. 2</span>, Springer, 2021, pp. 327–342.
+      </p>
+      <button class="bibtex-btn" type="button" data-bibtex="@incollection{wurm2021springest,
+  title = {The Springest Story: How IT Enables Holacratic Organizations},
+  author = {Bastian Wurm and Reinald A. Minnaar and Jan Mendling and Matt Hallmann and Saimir Bala and Waldemar Kremser and Erik Strauss},
+  editor = {Nils Urbach and Maximilian Röglinger and Karlheinz Kautz and Rose Alinda Alias and Carol Saunders and Martin Wiener},
+  booktitle = {Digitalization Cases Vol. 2: Mastering Digital Transformation for Global Business},
+  publisher = {Springer},
+  pages = {327--342},
+  year = {2021},
+  isbn = {978-3-030-80003-1},
+  doi = {10.1007/978-3-030-80003-1_17},
+  url = {https://doi.org/10.1007/978-3-030-80003-1_17}
+}">BibTeX</button>
+    </div>
+
+    <div class="publication-item" data-type="conference" data-year="2020" data-title="cherry-picking from spaghetti: multi-range filtering of event logs">
+      <p class="text-xs font-bold uppercase text-primary mb-1">Conference Proceedings (C14)</p>
       <p class="font-semibold text-lg text-gray-800">
         Cherry-Picking from Spaghetti: Multi-range Filtering of Event Logs.
         <a href="https://doi.org/10.1007/978-3-030-49418-6_9" target="_blank" class="pub-ext-link" title="Read paper"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
@@ -751,8 +871,8 @@
 }">BibTeX</button>
     </div>
 
-    <div class="publication-item" data-type="conference">
-      <p class="text-xs font-bold uppercase text-primary mb-1">Workshop Paper (C14)</p>
+    <div class="publication-item" data-type="conference" data-year="2020" data-title="analysis of business process batching using causal event models">
+      <p class="text-xs font-bold uppercase text-primary mb-1">Workshop Paper (C15)</p>
       <p class="font-semibold text-lg text-gray-800">
         Analysis of Business Process Batching Using Causal Event Models.
         <a href="https://doi.org/10.1007/978-3-030-72693-5_2" target="_blank" class="pub-ext-link" title="Read paper"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
@@ -776,8 +896,8 @@
 }">BibTeX</button>
     </div>
 
-    <div class="publication-item" data-type="conference">
-      <p class="text-xs font-bold uppercase text-primary mb-1">Forum Paper (C15)</p>
+    <div class="publication-item" data-type="conference" data-year="2020" data-title="discovering activities in software development processes">
+      <p class="text-xs font-bold uppercase text-primary mb-1">Forum Paper (C16)</p>
       <p class="font-semibold text-lg text-gray-800">
         Discovering Activities in Software Development Processes.
         <a href="https://ceur-ws.org/Vol-2793/paper6.pdf" target="_blank" class="pub-ext-link" title="Read paper"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
@@ -801,8 +921,8 @@
 }">BibTeX</button>
     </div>
 
-    <div class="publication-item" data-type="conference">
-      <p class="text-xs font-bold uppercase text-primary mb-1">Industry Forum Paper (C16)</p>
+    <div class="publication-item" data-type="conference" data-year="2019" data-title="exploring bpm adoption and strategic alignment of processes at raiffeisen bank kosovo">
+      <p class="text-xs font-bold uppercase text-primary mb-1">Industry Forum Paper (C17)</p>
       <p class="font-semibold text-lg text-gray-800">
         Exploring BPM adoption and strategic alignment of processes at Raiffeisen Bank Kosovo.
         <a href="https://ceur-ws.org/Vol-2428/paper4.pdf" target="_blank" class="pub-ext-link" title="Read paper"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
@@ -826,8 +946,8 @@
 }">BibTeX</button>
     </div>
 
-    <div class="publication-item" data-type="conference">
-      <p class="text-xs font-bold uppercase text-primary mb-1">Conference Proceedings (C17)</p>
+    <div class="publication-item" data-type="conference" data-year="2018" data-title="monitoring the software development process with process mining">
+      <p class="text-xs font-bold uppercase text-primary mb-1">Conference Proceedings (C18)</p>
       <p class="font-semibold text-lg text-gray-800">
         Monitoring the Software Development Process with Process Mining.
         <a href="https://doi.org/10.1007/978-3-319-94214-8_34" target="_blank" class="pub-ext-link" title="Read paper"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
@@ -851,8 +971,8 @@
 }">BibTeX</button>
     </div>
 
-    <div class="publication-item" data-type="conference">
-      <p class="text-xs font-bold uppercase text-primary mb-1">Conference Proceedings (C18)</p>
+    <div class="publication-item" data-type="conference" data-year="2018" data-title="case and activity identification for mining process models from middleware">
+      <p class="text-xs font-bold uppercase text-primary mb-1">Conference Proceedings (C19)</p>
       <p class="font-semibold text-lg text-gray-800">
         Case and Activity Identification for Mining Process Models from Middleware.
         <a href="https://doi.org/10.1007/978-3-030-02302-7_6" target="_blank" class="pub-ext-link" title="Read paper"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
@@ -876,8 +996,31 @@
 }">BibTeX</button>
     </div>
 
-    <div class="publication-item" data-type="conference">
-      <p class="text-xs font-bold uppercase text-primary mb-1">Conference Proceedings (C19)</p>
+    <div class="publication-item" data-type="chapter" data-year="2018" data-title="comprehensive business process management at siemens: implementing business process excellence">
+      <p class="text-xs font-bold uppercase text-primary mb-1">Book Chapter (Ch3)</p>
+      <p class="font-semibold text-lg text-gray-800">
+        Comprehensive Business Process Management at Siemens: Implementing Business Process Excellence.
+        <a href="https://doi.org/10.1007/978-3-319-58307-5_7" target="_blank" class="pub-ext-link" title="Read paper"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+      </p>
+      <p class="text-sm text-gray-600 italic">
+        Bartosz Wolinski, <span class="font-bold">Saimir Bala</span>.
+        <span class="font-bold">Business Process Management Cases</span>, Springer, 2018, pp. 111–124.
+      </p>
+      <button class="bibtex-btn" type="button" data-bibtex="@incollection{DBLP:books/sp/18/WolinskiB18,
+  author = {Bartosz Wolinski and Saimir Bala},
+  editor = {Jan vom Brocke and Jan Mendling},
+  title = {Comprehensive Business Process Management at Siemens: Implementing Business Process Excellence},
+  booktitle = {Business Process Management Cases, Digital Innovation and Business Transformation in Practice},
+  pages = {111--124},
+  publisher = {Springer},
+  year = {2018},
+  url = {https://doi.org/10.1007/978-3-319-58307-5_7},
+  doi = {10.1007/978-3-319-58307-5_7}
+}">BibTeX</button>
+    </div>
+
+    <div class="publication-item" data-type="conference" data-year="2017" data-title="uncovering the hidden co-evolution in the work history of software projects">
+      <p class="text-xs font-bold uppercase text-primary mb-1">Conference Proceedings (C20)</p>
       <p class="font-semibold text-lg text-gray-800">
         Uncovering the Hidden Co-evolution in the Work History of Software Projects.
         <a href="https://doi.org/10.1007/978-3-319-65000-5_10" target="_blank" class="pub-ext-link" title="Read paper"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
@@ -901,8 +1044,8 @@
 }">BibTeX</button>
     </div>
 
-    <div class="publication-item" data-type="conference">
-      <p class="text-xs font-bold uppercase text-primary mb-1">Workshop Paper (C20)</p>
+    <div class="publication-item" data-type="conference" data-year="2017" data-title="mining projects from structured and unstructured data">
+      <p class="text-xs font-bold uppercase text-primary mb-1">Workshop Paper (C21)</p>
       <p class="font-semibold text-lg text-gray-800">
         Mining Projects from Structured and Unstructured Data.
         <a href="https://ceur-ws.org/Vol-1859/emisa-01-paper.pdf" target="_blank" class="pub-ext-link" title="Read paper"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
@@ -926,8 +1069,8 @@
 }">BibTeX</button>
     </div>
 
-    <div class="publication-item" data-type="conference">
-      <p class="text-xs font-bold uppercase text-primary mb-1">Demo Paper (C21)</p>
+    <div class="publication-item" data-type="conference" data-year="2016" data-title="shapeworks: a bpms extension for complex process management">
+      <p class="text-xs font-bold uppercase text-primary mb-1">Demo Paper (C22)</p>
       <p class="font-semibold text-lg text-gray-800">
         SHAPEworks: A BPMS Extension for Complex Process Management.
         <a href="https://ceur-ws.org/Vol-1789/bpm-demo-2016-paper10.pdf" target="_blank" class="pub-ext-link" title="Read paper"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
@@ -951,8 +1094,8 @@
 }">BibTeX</button>
     </div>
 
-    <div class="publication-item" data-type="conference">
-      <p class="text-xs font-bold uppercase text-primary mb-1">Workshop Paper (C22)</p>
+    <div class="publication-item" data-type="conference" data-year="2016" data-title="resource classification from version control system logs">
+      <p class="text-xs font-bold uppercase text-primary mb-1">Workshop Paper (C23)</p>
       <p class="font-semibold text-lg text-gray-800">
         Resource Classification from Version Control System Logs.
         <a href="https://doi.org/10.1109/EDOCW.2016.7584383" target="_blank" class="pub-ext-link" title="Read paper"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
@@ -974,8 +1117,8 @@
 }">BibTeX</button>
     </div>
 
-    <div class="publication-item" data-type="conference">
-      <p class="text-xs font-bold uppercase text-primary mb-1">Conference Proceedings (C23)</p>
+    <div class="publication-item" data-type="conference" data-year="2015" data-title="mining project-oriented business processes">
+      <p class="text-xs font-bold uppercase text-primary mb-1">Conference Proceedings (C24)</p>
       <p class="font-semibold text-lg text-gray-800">
         Mining Project-Oriented Business Processes.
         <a href="https://doi.org/10.1007/978-3-319-23063-4_28" target="_blank" class="pub-ext-link" title="Read paper"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
@@ -999,8 +1142,8 @@
 }">BibTeX</button>
     </div>
 
-    <div class="publication-item" data-type="conference">
-      <p class="text-xs font-bold uppercase text-primary mb-1">Revised Selected Papers (C24)</p>
+    <div class="publication-item" data-type="conference" data-year="2015" data-title="a framework for safety-critical process management in engineering projects">
+      <p class="text-xs font-bold uppercase text-primary mb-1">Revised Selected Papers (C25)</p>
       <p class="font-semibold text-lg text-gray-800">
         A Framework for Safety-Critical Process Management in Engineering Projects.
         <a href="https://doi.org/10.1007/978-3-319-53435-0_1" target="_blank" class="pub-ext-link" title="Read paper"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
@@ -1023,122 +1166,6 @@
   doi = {10.1007/978-3-319-53435-0_1}
 }">BibTeX</button>
     </div>
-
-    <!-- ================= BOOK CHAPTERS ================= -->
-
-    <div class="publication-item" data-type="chapter">
-      <p class="text-xs font-bold uppercase text-primary mb-1">Book Chapter (Ch1)</p>
-      <p class="font-semibold text-lg text-gray-800">
-        Exploring BPM Adoption and Assessing the Strategic Alignment of Processes at Raiffeisen Bank Kosovo.
-        <a href="https://doi.org/10.1007/978-3-662-63047-1_21" target="_blank" class="pub-ext-link" title="Read paper"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
-      </p>
-      <p class="text-sm text-gray-600 italic">
-        Elheme Azemi, <span class="font-bold">Saimir Bala</span>.
-        <span class="font-bold">Business Process Management Cases (2)</span>, Springer, 2021, pp. 277–288.
-      </p>
-      <button class="bibtex-btn" type="button" data-bibtex="@incollection{DBLP:books/sp/21/AzemiB21,
-  author = {Elheme Azemi and Saimir Bala},
-  editor = {Jan vom Brocke and Jan Mendling and Michael Rosemann},
-  title = {Exploring BPM Adoption and Assessing the Strategic Alignment of Processes at Raiffeisen Bank Kosovo},
-  booktitle = {Business Process Management Cases Vol. 2, Digital Transformation - Strategy, Processes and Execution},
-  pages = {277--288},
-  publisher = {Springer},
-  year = {2021},
-  url = {https://doi.org/10.1007/978-3-662-63047-1_21},
-  doi = {10.1007/978-3-662-63047-1_21}
-}">BibTeX</button>
-    </div>
-
-    <div class="publication-item" data-type="chapter">
-      <p class="text-xs font-bold uppercase text-primary mb-1">Book Chapter (Ch2)</p>
-      <p class="font-semibold text-lg text-gray-800">
-        The Springest Story: How IT Enables Holacratic Organizations.
-      </p>
-      <p class="text-sm text-gray-600 italic">
-        B. Wurm, R. A. Minnaar, J. Mendling, M. Hallmann, <span class="font-bold">S. Bala</span>, W. Kremser, E. Strauss.
-        <span class="font-bold">Digitalization Cases Vol. 2</span>, Springer, 2021, pp. 327–342.
-      </p>
-      <button class="bibtex-btn" type="button" data-bibtex="@incollection{wurm2021springest,
-  title = {The Springest Story: How IT Enables Holacratic Organizations},
-  author = {B. Wurm and R. A. Minnaar and J. Mendling and M. Hallmann and S. Bala and W. Kremser and E. Strauss},
-  booktitle = {Digitalization Cases Vol. 2},
-  publisher = {Springer},
-  pages = {327--342},
-  year = {2021}
-}">BibTeX</button>
-    </div>
-
-    <div class="publication-item" data-type="chapter">
-      <p class="text-xs font-bold uppercase text-primary mb-1">Book Chapter (Ch3)</p>
-      <p class="font-semibold text-lg text-gray-800">
-        Comprehensive Business Process Management at Siemens: Implementing Business Process Excellence.
-        <a href="https://doi.org/10.1007/978-3-319-58307-5_7" target="_blank" class="pub-ext-link" title="Read paper"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
-      </p>
-      <p class="text-sm text-gray-600 italic">
-        Bartosz Wolinski, <span class="font-bold">Saimir Bala</span>.
-        <span class="font-bold">Business Process Management Cases</span>, Springer, 2018, pp. 111–124.
-      </p>
-      <button class="bibtex-btn" type="button" data-bibtex="@incollection{DBLP:books/sp/18/WolinskiB18,
-  author = {Bartosz Wolinski and Saimir Bala},
-  editor = {Jan vom Brocke and Jan Mendling},
-  title = {Comprehensive Business Process Management at Siemens: Implementing Business Process Excellence},
-  booktitle = {Business Process Management Cases, Digital Innovation and Business Transformation in Practice},
-  pages = {111--124},
-  publisher = {Springer},
-  year = {2018},
-  url = {https://doi.org/10.1007/978-3-319-58307-5_7},
-  doi = {10.1007/978-3-319-58307-5_7}
-}">BibTeX</button>
-    </div>
-
-    <!-- ================= PREPRINTS ================= -->
-
-    <div class="publication-item" data-type="preprint">
-      <p class="text-xs font-bold uppercase text-primary mb-1">Preprint (P1)</p>
-      <p class="font-semibold text-lg text-gray-800">
-        Using Process Mining to Generate AI Agents from Software Engineering Process Records.
-        <a href="https://doi.org/10.48550/arXiv.2607.04948" target="_blank" class="pub-ext-link" title="Read paper"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
-        <a href="https://arxiv.org/abs/2607.04948" target="_blank" class="oa-badge" style="background:#fff7ed;color:#c2410c;border-color:#fed7aa;" title="Free preprint on arXiv"><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg> Preprint</a>
-      </p>
-      <p class="text-sm text-gray-600 italic">
-        <span class="font-bold">Saimir Bala</span>, Fabiana Fournier, Lior Limonad, Andreas Metzger.
-        <span class="font-bold">arXiv</span>, 2026.
-      </p>
-      <button class="bibtex-btn" type="button" data-bibtex="@article{DBLP:journals/corr/abs-2607-04948,
-  author = {Saimir Bala and Fabiana Fournier and Lior Limonad and Andreas Metzger},
-  title = {Using Process Mining to Generate AI Agents from Software Engineering Process Records},
-  journal = {CoRR},
-  year = {2026},
-  url = {https://doi.org/10.48550/arXiv.2607.04948},
-  doi = {10.48550/ARXIV.2607.04948},
-  eprinttype = {arXiv},
-  eprint = {2607.04948}
-}">BibTeX</button>
-    </div>
-
-    <!-- ================= DATASETS &amp; SOFTWARE ================= -->
-
-    <div class="publication-item" data-type="dataset">
-      <p class="text-xs font-bold uppercase text-primary mb-1">Dataset (D1)</p>
-      <p class="font-semibold text-lg text-gray-800">
-        AI-Assisted Event Log Extraction for Process Mining in Healthcare (Replication Package) (Version 1).
-        <a href="https://doi.org/10.5281/zenodo.20425398" target="_blank" class="pub-ext-link" title="Read paper"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
-      </p>
-      <p class="text-sm text-gray-600 italic">
-        <span class="font-bold">Saimir Bala</span>, Zeinab Soleimani, Mathias Weske.
-        <span class="font-bold">Zenodo</span>, Replication package, May 2026.
-      </p>
-      <button class="bibtex-btn" type="button" data-bibtex="@misc{DBLP:data/12/BalaSW26,
-  author = {Saimir Bala and Zeinab Soleimani and Mathias Weske},
-  title = {AI-Assisted Event Log Extraction for Process Mining in Healthcare (Replication Package) (Version 1)},
-  year = {2026},
-  month = {may},
-  howpublished = {r̆lhttps://doi.org/10.5281/zenodo.20425398},
-  note = {Replication package},
-  url = {https://doi.org/10.5281/zenodo.20425398},
-  doi = {10.5281/ZENODO.20425398}
-}">BibTeX</button>
-    </div>
     <!-- publications:full:end -->
 
   </div>
@@ -1149,13 +1176,60 @@
 
             /* FILTERS handled below with numbering update */
 
-            /* BIBTEX COPY */
+            /* BIBTEX: click to reveal the entry, then copy it */
             document.querySelectorAll(".bibtex-btn").forEach(btn => {
-            btn.addEventListener("click", () => {
-                navigator.clipboard.writeText(btn.dataset.bibtex);
-                btn.textContent = "Copied!";
-                setTimeout(() => btn.textContent = "BibTeX", 1500);
-            });
+              btn.setAttribute("aria-expanded", "false");
+
+              const panel = document.createElement("div");
+              panel.className = "bibtex-panel";
+              panel.hidden = true;
+
+              const head = document.createElement("div");
+              head.className = "bibtex-panel-head";
+              const label = document.createElement("span");
+              label.textContent = "BibTeX";
+              const copyBtn = document.createElement("button");
+              copyBtn.type = "button";
+              copyBtn.className = "bibtex-copy";
+              copyBtn.textContent = "Copy";
+              head.appendChild(label);
+              head.appendChild(copyBtn);
+
+              const code = document.createElement("pre");
+              code.textContent = btn.dataset.bibtex;
+
+              panel.appendChild(head);
+              panel.appendChild(code);
+              btn.insertAdjacentElement("afterend", panel);
+
+              btn.addEventListener("click", () => {
+                panel.hidden = !panel.hidden;
+                btn.setAttribute("aria-expanded", String(!panel.hidden));
+                btn.textContent = panel.hidden ? "BibTeX" : "Hide BibTeX";
+              });
+
+              copyBtn.addEventListener("click", () => {
+                const done = () => {
+                  copyBtn.textContent = "Copied!";
+                  setTimeout(() => copyBtn.textContent = "Copy", 1500);
+                };
+                const fallback = () => {
+                  // file:// previews and older browsers have no clipboard API
+                  const range = document.createRange();
+                  range.selectNodeContents(code);
+                  const selection = window.getSelection();
+                  selection.removeAllRanges();
+                  selection.addRange(range);
+                  try {
+                    document.execCommand("copy") ? done() : null;
+                  } catch (e) { /* leave the text selected to copy by hand */ }
+                };
+                if (navigator.clipboard && window.isSecureContext) {
+                  navigator.clipboard.writeText(btn.dataset.bibtex).then(done, fallback);
+                } else {
+                  fallback();
+                }
+              });
             });
 
             /* Convert parenthesized indices (e.g., (C5), (J2), (Ch1)) into badge spans */
@@ -1192,6 +1266,39 @@
                 if (num && !visibleItems.includes(it)) num.remove();
               });
             }
+
+            /* SORTING — the list ships newest-first; this reorders it in place */
+            (function() {
+              const select = document.getElementById('pub-sort');
+              const container = document.querySelector('#full-publications .space-y-5');
+              if (!select || !container) return;
+
+              const items = Array.from(container.querySelectorAll('.publication-item'));
+              // Category order comes from the generated filter buttons
+              const order = Array.from(document.querySelectorAll('.pub-filter-btn'))
+                .map(btn => btn.dataset.filter)
+                .filter(f => f !== 'all');
+              items.forEach((item, index) => {
+                item._rank = index;                                  // generated order, for stable ties
+                item._year = parseInt(item.dataset.year, 10);
+                if (isNaN(item._year)) item._year = Infinity;         // forthcoming sorts first
+                item._type = order.indexOf(item.dataset.type);
+                item._title = item.dataset.title || '';
+              });
+
+              const comparators = {
+                'year-desc': (a, b) => b._year - a._year || a._rank - b._rank,
+                'year-asc': (a, b) => a._year - b._year || a._rank - b._rank,
+                'type': (a, b) => a._type - b._type || b._year - a._year || a._rank - b._rank,
+                'title': (a, b) => a._title.localeCompare(b._title)
+              };
+
+              select.addEventListener('change', () => {
+                const compare = comparators[select.value] || comparators['year-desc'];
+                items.slice().sort(compare).forEach(item => container.appendChild(item));
+                updatePublicationNumbers('#full-publications');
+              });
+            })();
 
             // Hook the numbering to filter and toggle actions
             document.querySelectorAll(".pub-filter-btn").forEach(btn => {
@@ -1669,16 +1776,16 @@
       })();
     </script>
     <script>
-      // Citation metrics: scholar.json is refreshed daily from Google Scholar by a
+      // Citation metrics: metrics.json is refreshed daily from OpenAlex by a
       // GitHub Action. If it cannot be loaded, the numbers in the markup stay.
       (function() {
-        const box = document.getElementById('scholar-metrics');
+        const box = document.getElementById('citation-metrics');
         if (!box) return;
-        fetch('scholar.json?t=' + Date.now(), { cache: 'no-store' })
+        fetch('metrics.json?t=' + Date.now(), { cache: 'no-store' })
           .then(response => response.ok ? response.json() : Promise.reject(response.status))
           .then(data => {
-            box.querySelectorAll('[data-scholar]').forEach(el => {
-              const value = data[el.dataset.scholar];
+            box.querySelectorAll('[data-metric]').forEach(el => {
+              const value = data[el.dataset.metric];
               if (typeof value === 'number' && value > 0) {
                 el.textContent = value.toLocaleString('en-US');
               }
@@ -1686,8 +1793,11 @@
             if (data.updated) {
               const date = new Date(data.updated);
               if (!isNaN(date)) {
-                box.title = 'Google Scholar metrics, last updated ' +
-                  date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+                const shown = date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+                box.title = 'Citation metrics from ' + (data.source || 'OpenAlex') + ', last updated ' + shown;
+                document.querySelectorAll('[data-metric-updated]').forEach(el => {
+                  el.textContent = ', updated ' + shown;
+                });
               }
             }
           })

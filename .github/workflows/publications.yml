@@ -23,10 +23,10 @@ jobs:
       changed: ${{ steps.commit.outputs.changed }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: "3.12"
 
@@ -36,15 +36,15 @@ jobs:
       - name: Commit regenerated publication list
         id: commit
         run: |
-          if git diff --quiet -- index.html scholar.json; then
+          if git diff --quiet -- index.html metrics.json; then
             echo "publication list already up to date"
             echo "changed=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add index.html scholar.json
-          git commit -m "chore: rebuild publication list from publications.bib"
+          git add index.html metrics.json
+          git commit -m "chore: rebuild publication list from the .bib files"
           git push
           echo "changed=true" >> "$GITHUB_OUTPUT"
 

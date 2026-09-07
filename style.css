@@ -155,6 +155,56 @@ body {
   color: var(--color-primary);
 }
 
+/* ── BibTeX panel (revealed by the button) ── */
+.bibtex-panel {
+  margin-top: 0.35rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+  background: #f8fafc;
+  overflow: hidden;
+}
+.bibtex-panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.35rem 0.35rem 0.35rem 0.75rem;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #64748b;
+}
+.bibtex-copy {
+  padding: 0.25rem 0.7rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0.375rem;
+  background: #ffffff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--color-secondary);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.bibtex-copy:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+.bibtex-panel pre {
+  margin: 0;
+  padding: 0.75rem;
+  overflow-x: auto;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.72rem;
+  line-height: 1.5;
+  color: #1f2937;
+  white-space: pre;
+  tab-size: 2;
+}
+
 /* ── Profile icon buttons (sidebar) ── */
 .profile-icon-btn {
   display: inline-flex;
@@ -226,4 +276,32 @@ body {
 }
 .teaching-table tr:hover td {
   background: #f8fafc;
+}
+
+/* ── Publication sort control ── */
+.pub-sort {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #64748b;
+}
+.pub-sort select {
+  padding: 0.4rem 0.6rem;
+  border: 2px solid transparent;
+  border-radius: 999px;
+  background: #f1f5f9;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-text);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.pub-sort select:hover {
+  background: #e2e8f0;
+}
+.pub-sort select:focus {
+  outline: none;
+  border-color: var(--color-secondary);
 }
