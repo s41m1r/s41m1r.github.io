@@ -319,8 +319,8 @@ def detail_parts(entry):
 
 def detail_html(entry):
     detail = ", ".join(detail_parts(entry))
-    bold_venue = f'<span class="font-bold">{html.escape(venue(entry))}</span>'
-    return bold_venue + (f", {html.escape(detail)}." if detail else ".")
+    shown_venue = f'<span class="font-bold">{html.escape(venue(entry))}</span>'
+    return shown_venue + (f", {html.escape(detail)}." if detail else ".")
 
 
 def main_link(entry):
@@ -423,7 +423,7 @@ def render_full_item(entry, label):
         f'{indent}  <p class="pub-title">\n'
         f'{indent}    {html.escape(entry["title"])}.{link_lines(entry, indent)}\n'
         f'{indent}  </p>\n'
-        f'{indent}  <p class="text-sm text-gray-600 italic">\n'
+        f'{indent}  <p class="text-sm text-gray-600">\n'
         f'{indent}    {render_authors(entry)}.\n'
         f'{indent}    {detail_html(entry)}\n'
         f'{indent}  </p>\n'
@@ -454,7 +454,7 @@ def render_selected_item(entry):
         f'{indent}  <p class="pub-title">\n'
         f'{indent}    {html.escape(entry["title"])}.{link_lines(entry, indent)}\n'
         f'{indent}  </p>\n'
-        f'{indent}  <p class="text-sm text-gray-600 italic">'
+        f'{indent}  <p class="text-sm text-gray-600">'
         f'{render_authors(entry, short=True)}. {detail_html(entry)}</p>\n'
         f'{indent}</div>\n'
     )
