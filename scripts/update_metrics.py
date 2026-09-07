@@ -1,119 +1,155 @@
 #!/usr/bin/env python3
-"""Fetch citation metrics from OpenAlex and write them to metrics.json.
+"""Fetch citation metrics from Google Scholar and write them to metrics.json.
 
 Run locally with:  python3 scripts/update_metrics.py
 The GitHub Actions workflow .github/workflows/metrics.yml runs it on a schedule.
 
-OpenAlex is used rather than Google Scholar because Scholar serves a captcha to
-datacenter IPs, so a scheduled run from a CI runner can never reach it. OpenAlex
-has an open API with no key, no rate limit worth worrying about at one call a
-day, and the author is addressed by ORCID, so there is no name disambiguation to
-get wrong. Its h-index and i10-index match Scholar; its citation count is lower,
-because Scholar also counts preprints, theses and non-indexed venues.
+Only the standard library is used, so no dependencies need installing.
 
-Only the standard library is used, and the request carries no personal data.
+NOTE ON AUTOMATION: Google Scholar serves a captcha to datacenter IPs, so a run
+from a GitHub Actions runner is usually turned away and the numbers stay as they
+are. Running this script from a normal network (your machine) works, and so does
+a run with a SerpAPI key if one is ever wired in. The scheduled run is therefore
+best-effort: it refreshes the numbers when Scholar lets it through and leaves
+them untouched otherwise.
 
-metrics.json is only rewritten with numbers that parsed cleanly, so the site
-keeps showing the last good values otherwise. Two kinds of failure are told
-apart on purpose:
+metrics.json is only rewritten with numbers that parsed cleanly. Two kinds of
+failure are told apart on purpose:
 
-  * OpenAlex is unreachable or rate-limits the request — transient, so the
-    script warns and exits 0 and the scheduled run stays green.
-  * The response parses but the numbers are missing or implausible — that means
-    the API changed and this script needs fixing, so it exits non-zero.
+  * Scholar is unreachable or answers with a captcha / "unusual traffic" page —
+    expected on CI, so the script warns and exits 0 and the run stays green.
+  * The profile loads but cannot be parsed, or the numbers look implausible —
+    that means the page layout changed and this script needs fixing, so it
+    exits non-zero and the run fails loudly.
 
-Set METRICS_STRICT=1 to fail on an unreachable API too.
+Set METRICS_STRICT=1 to fail on a block too.
 """
 
+import html
 import json
 import os
 import pathlib
+import random
+import re
 import sys
 import time
 import urllib.error
 import urllib.request
 from datetime import datetime, timezone
 
-ORCID = os.environ.get("ORCID", "0000-0001-7179-1901")
-API_URL = "https://api.openalex.org/authors/https://orcid.org/{orcid}"
+USER_ID = os.environ.get("SCHOLAR_USER_ID", "ZR0Bo_QAAAAJ")
+PROFILE_URL = "https://scholar.google.com/citations?user={uid}&hl=en&cstart={start}&pagesize=100"
+PUBLIC_URL = "https://scholar.google.com/citations?user={uid}&hl=en"
 OUT_FILE = pathlib.Path(__file__).resolve().parent.parent / "metrics.json"
 
-# Treat an unreachable API as a hard failure (default: warn and exit 0).
+# Treat a block as a hard failure (default: warn and exit 0).
 STRICT = os.environ.get("METRICS_STRICT", "") == "1"
 
-USER_AGENT = "saimir-bala-portfolio (+https://github.com/s41m1r/saimir-bala-portfolio)"
+USER_AGENTS = [
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36",
+]
+
+# Markers of Google's "unusual traffic" / captcha interstitial.
+BLOCK_MARKERS = ("unusual traffic", "/sorry/index", "CaptchaRedirect", "captcha-form", "not a robot")
+
+STATS_RE = re.compile(r'class="gsc_rsb_std">(\d+)</td>')
+ROW_RE = re.compile(r'class="gsc_a_tr"')
+NAME_RE = re.compile(r'id="gsc_prf_in">([^<]*)<')
 
 
-class Unavailable(Exception):
-    """OpenAlex could not be reached (network trouble, rate limit, outage)."""
+class Blocked(Exception):
+    """Scholar refused to serve the profile (captcha, rate limit, network)."""
 
 
-def fetch(url, attempts=3):
+def is_block_page(page, final_url=""):
+    if "/sorry/" in final_url:
+        return True
+    lowered = page[:4000].lower()
+    return any(marker.lower() in lowered for marker in BLOCK_MARKERS)
+
+
+def fetch(url, attempts=4):
     last_error = None
     for attempt in range(attempts):
         request = urllib.request.Request(
-            url, headers={"User-Agent": USER_AGENT, "Accept": "application/json"}
+            url,
+            headers={
+                "User-Agent": random.choice(USER_AGENTS),
+                "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+                "Accept-Language": "en-US,en;q=0.9",
+            },
         )
         try:
             with urllib.request.urlopen(request, timeout=30) as response:
-                return json.loads(response.read().decode("utf-8"))
+                page = response.read().decode("utf-8", "replace")
+                if is_block_page(page, response.geturl()):
+                    last_error = "captcha / unusual-traffic page"
+                else:
+                    return page
         except urllib.error.HTTPError as error:
             last_error = f"HTTP {error.code}"
-            if error.code not in (429, 500, 502, 503, 504):
-                raise Unavailable(f"OpenAlex answered {last_error}")
-        except (urllib.error.URLError, TimeoutError, OSError, ValueError) as error:
+            if error.code not in (403, 429, 503):
+                raise Blocked(f"could not reach Google Scholar: {last_error}")
+        except (urllib.error.URLError, TimeoutError, OSError) as error:
             last_error = error
         time.sleep(5 * (attempt + 1))
-    raise Unavailable(f"OpenAlex did not answer: {last_error}")
+    raise Blocked(f"Google Scholar did not serve the profile: {last_error}")
 
 
 def main():
     try:
         return update()
-    except Unavailable as unavailable:
-        message = f"{unavailable} — keeping the numbers already in metrics.json"
+    except Blocked as blocked:
+        message = f"{blocked} — keeping the numbers already in metrics.json"
         print(f"::warning::{message}" if os.environ.get("GITHUB_ACTIONS") else message)
         return 1 if STRICT else 0
 
 
 def update():
-    author = fetch(API_URL.format(orcid=ORCID))
+    page = fetch(PROFILE_URL.format(uid=USER_ID, start=0))
 
-    stats = author.get("summary_stats") or {}
-    citations = author.get("cited_by_count")
-    h_index = stats.get("h_index")
-    i10_index = stats.get("i10_index")
-    works = author.get("works_count")
+    name_match = NAME_RE.search(page)
+    stats = [int(value) for value in STATS_RE.findall(page)]
+    if name_match is None or len(stats) < 6:
+        # Not a block (fetch already ruled that out), so the layout changed.
+        raise SystemExit("the profile page no longer parses — scripts/update_metrics.py needs updating")
 
-    if None in (citations, h_index, i10_index, works):
-        raise SystemExit("OpenAlex response is missing the metrics — this script needs updating")
-    if citations <= 0 or h_index <= 0 or works <= 0:
-        raise SystemExit(f"implausible values from OpenAlex ({citations}/{h_index}/{works})")
+    # Table order: citations all/recent, h-index all/recent, i10-index all/recent.
+    citations, h_index, i10_index = stats[0], stats[2], stats[4]
+
+    articles = len(ROW_RE.findall(page))
+    start = 100
+    while articles == start:  # the profile is paginated 100 at a time
+        articles += len(ROW_RE.findall(fetch(PROFILE_URL.format(uid=USER_ID, start=start))))
+        start += 100
+
+    if citations <= 0 or h_index <= 0 or articles <= 0:
+        raise SystemExit(f"implausible values scraped ({citations}/{h_index}/{articles})")
 
     previous = {}
     if OUT_FILE.exists():
         previous = json.loads(OUT_FILE.read_text())
 
-    openalex_id = (author.get("id") or "").rsplit("/", 1)[-1]
     data = {
-        "name": author.get("display_name", ""),
-        "source": "OpenAlex",
-        "orcid": ORCID,
-        "openalex_id": openalex_id,
-        "profile_url": author.get("id", ""),
+        "name": html.unescape(name_match.group(1)).strip(),
+        "source": "Google Scholar",
+        "user_id": USER_ID,
+        "profile_url": PUBLIC_URL.format(uid=USER_ID),
         "citations": citations,
         "h_index": h_index,
         "i10_index": i10_index,
-        "works": works,
+        "works": articles,
         # Set by scripts/build_publications.py from the .bib files.
-        "publications": previous.get("publications", works),
+        "publications": previous.get("publications", articles),
         "updated": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
     }
 
     OUT_FILE.write_text(json.dumps(data, indent=2) + "\n")
     print(json.dumps(data, indent=2))
 
-    # Never regress on numbers that only ever grow — a sign of a partial answer.
+    # Never regress on numbers that only ever grow — a sign of a partial page.
     for key in ("citations", "h_index"):
         if key in previous and data[key] < previous[key]:
             print(f"warning: {key} dropped from {previous[key]} to {data[key]}", file=sys.stderr)

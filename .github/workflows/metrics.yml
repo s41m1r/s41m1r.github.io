@@ -1,4 +1,4 @@
-# Keeps metrics.json in sync with the OpenAlex author record
+# Keeps metrics.json in sync with the Google Scholar profile
 name: Update citation metrics
 
 on:
@@ -26,7 +26,7 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Fetch metrics from OpenAlex
+      - name: Fetch metrics from Google Scholar
         run: python3 scripts/update_metrics.py
 
       - name: Commit updated metrics

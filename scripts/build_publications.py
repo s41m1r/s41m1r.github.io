@@ -46,7 +46,7 @@ OWNER_LAST_NAME = "Bala"
 OWNER_INITIAL = "S"
 
 # Fields that only drive the website, stripped from the BibTeX copy button.
-SITE_FIELDS = {"pubkind", "venue", "shortvenue", "oa", "preprint", "award", "selected", "category"}
+SITE_FIELDS = {"pubkind", "venue", "shortvenue", "oa", "preprint", "code", "award", "selected", "category"}
 # DBLP bookkeeping, likewise not worth copying.
 DBLP_FIELDS = {"timestamp", "biburl", "bibsource"}
 
@@ -101,7 +101,12 @@ STAR_SVG = (
     '00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 '
     '00.951-.69l1.519-4.674z"/></svg>'
 )
-PREPRINT_STYLE = 'style="background:#fff7ed;color:#c2410c;border-color:#fed7aa;"'
+CODE_SVG = (
+    '<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" '
+    'stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" '
+    'style="display:inline;vertical-align:middle"><polyline points="16 18 22 12 16 6"/>'
+    '<polyline points="8 6 2 12 8 18"/></svg>'
+)
 
 ENTRY_RE = re.compile(r"@(\w+)\s*\{\s*([^,\s]+)\s*,(.*?)\n\}", re.DOTALL)
 FIELD_RE = re.compile(
@@ -333,13 +338,14 @@ def badges(entry):
     link = main_link(entry)
     if link:
         out.append(
-            f'<a href="{html.escape(link)}" target="_blank" class="pub-ext-link" title="Read paper">{LINK_SVG}</a>'
+            f'<a href="{html.escape(link)}" target="_blank" class="pub-badge pub-badge-read" '
+            f'title="Read paper">{LINK_SVG} Read paper</a>'
         )
     if entry.get("oa"):
         url = entry["oa"]
         title = "Open Access — CEUR-WS" if "ceur-ws.org" in url else "Open Access"
         out.append(
-            f'<a href="{html.escape(url)}" target="_blank" class="oa-badge" title="{title}">{LOCK_SVG} Open Access</a>'
+            f'<a href="{html.escape(url)}" target="_blank" class="pub-badge pub-badge-oa" title="{title}">{LOCK_SVG} Open Access</a>'
         )
     if entry.get("preprint") and entry["preprint"] != link:
         url = entry["preprint"]
@@ -350,8 +356,14 @@ def badges(entry):
         else:
             title = "Freely available preprint"
         out.append(
-            f'<a href="{html.escape(url)}" target="_blank" class="oa-badge" {PREPRINT_STYLE} '
+            f'<a href="{html.escape(url)}" target="_blank" class="pub-badge pub-badge-preprint" '
             f'title="{title}">{LOCK_SVG} Preprint</a>'
+        )
+    if entry.get("code"):
+        url = entry["code"]
+        out.append(
+            f'<a href="{html.escape(url)}" target="_blank" class="pub-badge pub-badge-code" '
+            f'title="Source code repository">{CODE_SVG} Source code</a>'
         )
     return out
 
@@ -374,8 +386,7 @@ def award_block(entry, indent):
     return (
         f'{indent}<div class="flex items-center gap-1.5 mb-2">\n'
         f'{indent}  {STAR_SVG}\n'
-        f'{indent}  <span class="text-xs font-bold text-yellow-700 uppercase tracking-wide">'
-        f'{html.escape(entry["award"])}</span>\n'
+        f'{indent}  <span class="pub-award-label">{html.escape(entry["award"])}</span>\n'
         f'{indent}</div>\n'
     )
 
@@ -383,7 +394,7 @@ def award_block(entry, indent):
 def item_classes(entry):
     classes = "publication-item"
     if entry.get("award"):
-        classes += " border-l-4 border-yellow-500 bg-yellow-50"
+        classes += " pub-award"
     return classes
 
 
@@ -408,9 +419,8 @@ def render_full_item(entry, label):
         f' data-year="{entry.get("year", "")}"'
         f' data-title="{html.escape(entry["title"].lower(), quote=True)}">\n'
         + award_block(entry, indent + "  ")
-        + f'{indent}  <p class="text-xs font-bold uppercase text-primary mb-1">'
-        f'{html.escape(caption(entry))} ({label})</p>\n'
-        f'{indent}  <p class="font-semibold text-lg text-gray-800">\n'
+        + f'{indent}  <p class="pub-kind">{html.escape(caption(entry))} ({label})</p>\n'
+        f'{indent}  <p class="pub-title">\n'
         f'{indent}    {html.escape(entry["title"])}.{link_lines(entry, indent)}\n'
         f'{indent}  </p>\n'
         f'{indent}  <p class="text-sm text-gray-600 italic">\n'
@@ -440,8 +450,8 @@ def render_selected_item(entry):
     return (
         f'{indent}<div class="{item_classes(entry)}">\n'
         + award_block(entry, indent + "  ")
-        + f'{indent}  <p class="text-xs font-bold uppercase text-primary mb-1">{header}</p>\n'
-        f'{indent}  <p class="font-semibold text-lg text-gray-800">\n'
+        + f'{indent}  <p class="pub-kind">{header}</p>\n'
+        f'{indent}  <p class="pub-title">\n'
         f'{indent}    {html.escape(entry["title"])}.{link_lines(entry, indent)}\n'
         f'{indent}  </p>\n'
         f'{indent}  <p class="text-sm text-gray-600 italic">'
