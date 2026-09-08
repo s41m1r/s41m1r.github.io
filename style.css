@@ -17,7 +17,9 @@ body {
     font-family: 'Inter', sans-serif;
     background-color: var(--color-background);
     color: var(--color-text);
-    line-height: 1.7;
+    /* 1.5 is what the site has always rendered with: Tailwind's reset used to
+       override 1.7 from here. Kept explicit now that the cascade is correct. */
+    line-height: 1.5;
 }
 
 /* ── Section headers ── */
@@ -464,4 +466,23 @@ body {
 }
 .metrics-inline:hover {
   color: var(--color-primary);
+}
+
+/* ── Nav anchors clear the sticky header ── */
+section[id] {
+  scroll-margin-top: 5rem;
+}
+
+/* ── Visible keyboard focus (mouse users are unaffected) ── */
+a:focus-visible,
+button:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+.pub-sort select:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
 }
