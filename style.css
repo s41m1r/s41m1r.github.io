@@ -22,12 +22,30 @@ body {
 
 /* ── Section headers ── */
 .section-header {
+    position: relative;
     border-bottom: 1px solid var(--color-border);
     padding-bottom: 0.5rem;
     margin-bottom: 1.25rem;
     font-size: 1.25rem;
     font-weight: 600;
     color: var(--color-secondary);
+}
+/* the one recurring accent: a short red bar under every section heading */
+.section-header::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 2.5rem;
+    height: 2px;
+    background: var(--color-primary);
+}
+.accent-rule {
+    width: 2.5rem;
+    height: 3px;
+    border-radius: 2px;
+    background: var(--color-primary);
+    margin-bottom: 0.75rem;
 }
 
 /* ── Publication list ── */
