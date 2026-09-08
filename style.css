@@ -399,25 +399,6 @@ body {
   border-bottom: 1px solid var(--color-border);
 }
 
-/* ── Hero photo panel (bleeds into the card's top-left corner) ── */
-.hero-photo {
-  flex-shrink: 0;
-  width: 100%;
-}
-.hero-photo img {
-  display: block;
-  width: 100%;
-  height: auto;      /* keep the 4:5 crop; the column, not the photo, stretches */
-}
-.hero-identity {
-  padding: 1.5rem;
-}
-@media (min-width: 768px) {
-  .hero-photo {
-    width: 300px;
-    border-right: 1px solid var(--color-border);
-  }
-}
 
 /* Links inside plain lists: same weight as the rest, underlined on hover */
 .simple-list .pro-link {
@@ -438,4 +419,24 @@ body {
 }
 .pub-badge-code:hover {
   background: #e0e7ff;
+}
+
+/* ── Hero masthead ── */
+.hero-mast-photo {
+  width: 200px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  flex-shrink: 0;
+}
+.metrics-inline {
+  color: #64748b;
+  text-decoration: none;
+}
+.metrics-inline strong {
+  color: var(--color-secondary);
+  font-weight: 700;
+}
+.metrics-inline:hover {
+  color: var(--color-primary);
 }

@@ -26,7 +26,7 @@
 
     <!-- Sticky Navigation Bar -->
     <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm z-50 border-b border-[var(--color-border)]">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
             <a href="#home" class="text-xl font-bold text-secondary">Dr. Saimir Bala</a>
             <!-- Desktop links -->
             <div class="hidden md:flex space-x-4">
@@ -78,49 +78,21 @@
     </script>
 
     <!-- Main Content Wrapper -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
 
         <!-- 1. HOME/PROFILE SECTION -->
-        <section id="home" class="mt-8 flex flex-col md:flex-row bg-white rounded-lg border border-[var(--color-border)] overflow-hidden">
-            <div class="hero-photo">
-                <img src="profile-portrait.jpg" alt="Dr. Saimir Bala">
-                <div class="hero-identity">
-                    <h1 class="text-2xl font-semibold text-gray-900 mb-1">Dr. Saimir Bala</h1>
-                <p class="text-sm font-semibold text-secondary mb-2 text-center md:text-left">
-                    Postdoctoral Researcher
-                </p>
-                    <p class="text-sm text-gray-600 text-center md:text-left">
-                    <a href="https://hpi.de/en/research/clusters/systems" target="_blank" class="pro-link">Systems Cluster</a>
-                </p>
-                <p class="text-sm text-gray-600 text-center md:text-left">
-                    <a href="https://bpt.hpi.uni-potsdam.de/" target="_blank" class="pro-link">Business Process Technology (BPT) Group</a>
-                </p>
-                <p class="text-sm text-gray-600 mb-4 text-center md:text-left">
-                    Hasso Plattner Institute (HPI), University of Potsdam, Germany
-                </p>
-                    <div class="mt-4">
-                    <!-- Citation metrics (numbers come from metrics.json, refreshed by .github/workflows/metrics.yml) -->
-                <a id="citation-metrics" href="https://scholar.google.com/citations?user=ZR0Bo_QAAAAJ&hl=en" target="_blank" class="w-full flex border border-[var(--color-border)] rounded-lg overflow-hidden text-center text-xs hover:border-primary transition-colors duration-200 mb-4 no-underline">
-                    <div class="flex-1 py-2 px-1 bg-gray-50 hover:bg-white">
-                        <div class="font-bold text-secondary text-base" data-metric="citations">289</div>
-                        <div class="text-gray-500">Citations</div>
-                    </div>
-                    <div class="w-px bg-[var(--color-border)]"></div>
-                    <div class="flex-1 py-2 px-1 bg-gray-50 hover:bg-white">
-                        <div class="font-bold text-secondary text-base" data-metric="h_index">10</div>
-                        <div class="text-gray-500">h-index</div>
-                    </div>
-                    <div class="w-px bg-[var(--color-border)]"></div>
-                    <div class="flex-1 py-2 px-1 bg-gray-50 hover:bg-white">
-                        <div class="font-bold text-secondary text-base" data-metric="publications">34</div>
-                        <div class="text-gray-500">Publications</div>
-                    </div>
-                </a>
-                    </div>
+        <section id="home" class="mt-8 mb-4">
+            <div class="flex flex-col sm:flex-row sm:items-end gap-6">
+                <img src="profile-portrait.jpg" alt="Dr. Saimir Bala" class="hero-mast-photo">
+                <div class="min-w-0">
+                    <h1 class="text-3xl font-semibold text-gray-900">Dr. Saimir Bala</h1>
+                    <p class="text-base text-gray-700 mt-2">Postdoctoral Researcher</p>
+                    <p class="text-sm text-gray-600 mt-1"><a href="https://bpt.hpi.uni-potsdam.de/" target="_blank" class="pro-link">Business Process Technology (BPT) Group</a> &amp; <a href="https://hpi.de/en/research/clusters/systems" target="_blank" class="pro-link">Systems Cluster</a></p>
+                    <p class="text-sm text-gray-600 mt-1"><a href="https://hpi.de/en/" target="_blank" class="pro-link">Hasso Plattner Institute, University of Potsdam</a></p>
+                    <p class="text-sm text-gray-500 mt-3"><a id="citation-metrics" href="https://scholar.google.com/citations?user=ZR0Bo_QAAAAJ&hl=en" target="_blank" class="metrics-inline"><strong data-metric="citations">289</strong> citations &middot; h-index <strong data-metric="h_index">10</strong> &middot; <strong data-metric="publications">34</strong> publications</a></p>
                 </div>
             </div>
-            <div class="p-8 flex-1 min-w-0">
-                <h2 class="section-header">About</h2>
+            <div class="mt-8">
                 <p class="mb-4 text-gray-700">Saimir Bala is a Postdoctoral Researcher at the <a href="https://bpt.hpi.uni-potsdam.de/" target="_blank" class="pro-link">Business Process Technology (BPT) Group</a> and the <a href="https://hpi.de/en/research/clusters/systems" target="_blank" class="pro-link">Systems Cluster</a> at the <a href="https://hpi.de/en/" target="_blank" class="pro-link">Hasso Plattner Institute (HPI), University of Potsdam, Germany</a>. His research sits at the intersection of Software Engineering, Business Process Management, and Artificial Intelligence, with a particular focus on data-driven techniques for analyzing and improving complex processes.</p>
                 <p class="mb-4 text-gray-700">Prior to joining HPI, he was a Research Associate at <a href="https://www.informatik.hu-berlin.de/en/forschung-en/gebiete/promis-en/team/balasaim" target="_blank" class="pro-link">Humboldt-Universität zu Berlin</a> (2021–2025). He holds a PhD in Economics and Social Sciences from the <a href="https://www.wu.ac.at/en/dpkm/team" target="_blank" class="pro-link">Institute for Data, Process and Knowledge Management</a> at the Vienna University of Economics and Business (WU), Austria. His doctoral work investigated ways to bridge Process Mining and Software Engineering, developing analytical methods for understanding the software development process through data. He is also a Fellow of the <a href="https://www.weizenbaum-institut.de/portrait/p/saimir-bala" target="_blank" class="pro-link">Weizenbaum Institute for the Networked Society</a> in Berlin.</p>
                 <p class="mb-4 text-gray-700">Saimir holds a BSc and an MSc in Computer Science Engineering from Sapienza University of Rome.</p>
@@ -171,11 +143,8 @@
 <section id="research" class="py-10">
     <h2 class="section-header">Core Research Areas</h2>
 
-    <div class="auto-grid grid grid-cols-1 md:grid-cols-2 gap-8">
-
-        <!-- Research Area 1: Business Process Management & Process Mining -->
-        <div class="p-6 rounded-lg bg-white border border-[var(--color-border)]">
-            <h3 class="font-semibold text-base mb-3 text-secondary flex items-center">
+    <div class="mb-6">
+        <h3 class="font-semibold text-base mb-2 text-secondary flex items-center">
                 <svg xmlns="http://www.w3.org/2000/svg"
                      class="h-6 w-6 mr-3 text-primary"
                      viewBox="0 0 24 24"
@@ -189,15 +158,13 @@
                 </svg>
                 Business Process Management & Process Mining
             </h3>
-
-            <p class="text-gray-700 text-sm">
+        <p class="text-gray-700 text-sm">
                 My work in this area focuses on three specific problems: <span class="font-medium">data quality in object-centric event data</span> (how do we detect and classify issues that corrupt process analysis?); <span class="font-medium">fairness and bias in process mining</span> (which process perspectives are systematically distorted, and how can we intervene?); and <span class="font-medium">AI-augmented process analytics</span> (from exam process mining to lifecycle nudging). I am particularly interested in cases where process data reveals behavioral patterns that are hard to see with classical methods.
             </p>
-        </div>
+    </div>
 
-        <!-- Research Area 2: Software Engineering -->
-        <div class="p-6 rounded-lg bg-white border border-[var(--color-border)]">
-            <h3 class="font-semibold text-base mb-3 text-secondary flex items-center">
+    <div class="mb-6">
+        <h3 class="font-semibold text-base mb-2 text-secondary flex items-center">
                 <svg xmlns="http://www.w3.org/2000/svg"
                      class="h-6 w-6 mr-3 text-primary"
                      viewBox="0 0 24 24"
@@ -211,19 +178,12 @@
                 </svg>
                 Software Engineering
             </h3>
-
-            <p class="text-gray-700 text-sm">
+        <p class="text-gray-700 text-sm">
                 I treat software development as a process that leaves traces — in version control history, issue trackers, and middleware logs. My specific contributions include <span class="font-medium">process mining applied to git repositories</span> (detecting side-tracking, co-evolution patterns, and developer behavior); <span class="font-medium">file and project completion prediction</span> using time-series models that embrace the lifecycle structure of software artifacts; and <span class="font-medium">multi-dimensional process analysis</span> of development projects.
             </p>
-        </div>
-
     </div>
 
-    <!-- Research outputs callout -->
-    <div class="mt-8 flex items-center gap-3 p-4 rounded-lg border border-[var(--color-border)] bg-gray-50">
-        <img src="icons/icons8-github-48.png" alt="" class="h-6 w-6 flex-shrink-0">
-        <p class="text-sm text-gray-700">Research code and datasets are shared on <a href="https://github.com/s41m1r" target="_blank" class="pro-link">GitHub (github.com/s41m1r)</a>. Feel free to open issues or reach out if you want to build on this work.</p>
-    </div>
+    <p class="text-sm text-gray-600">Research code and datasets are shared on <a href="https://github.com/s41m1r" target="_blank" class="pro-link">GitHub (github.com/s41m1r)</a>. Feel free to open issues or reach out if you want to build on this work.</p>
 </section>
 
         <!-- 3. SELECTED PUBLICATIONS SECTION -->
