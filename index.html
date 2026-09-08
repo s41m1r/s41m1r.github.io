@@ -28,6 +28,9 @@
     <meta name="twitter:image" content="https://s41m1r.github.io/og-image.jpg">
     <title>Dr. Saimir Bala - Postdoctoral Researcher, HPI Potsdam</title>
     <!-- Load Tailwind CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
     <link rel="stylesheet" href="tailwind.css">
     <!-- Custom styles -->
     <link rel="stylesheet" href="style.css">
@@ -1289,7 +1292,8 @@
                 : svgClose + ' Collapse publication list';
               if (!isHidden) {
                 setTimeout(() => {
-                  section.scrollIntoView({ behavior: "smooth" });
+                  const smooth = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                  section.scrollIntoView({ behavior: smooth ? "smooth" : "auto" });
                   updatePublicationNumbers('#full-publications');
                 }, 120);
               }
@@ -1581,7 +1585,10 @@
             btn.style.pointerEvents = 'none';
           }
         });
-        btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+        btn.addEventListener('click', () => {
+          const smooth = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+          window.scrollTo({ top: 0, behavior: smooth ? 'smooth' : 'auto' });
+        });
       })();
     </script>
     <script>
