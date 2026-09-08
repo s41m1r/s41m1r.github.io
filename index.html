@@ -1141,6 +1141,7 @@
     <!-- publications:full:end -->
 
   </div>
+
 </section>
 
         <script>
@@ -1280,24 +1281,47 @@
             const defaultBtn = document.querySelector('.pub-filter-btn[data-filter="all"]');
             if (defaultBtn) defaultBtn.classList.add("active");
 
-            document.getElementById("toggle-publications").addEventListener("click", function (e) {
-              e.preventDefault();
+            (function() {
+              const toggle = document.getElementById("toggle-publications");
               const section = document.getElementById("full-publications");
-              const isHidden = section.classList.toggle("hidden");
+              const nav = document.querySelector("nav");
               const svgOpen = '<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>';
               const svgClose = '<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>';
-              const total = document.querySelectorAll('#full-publications .publication-item').length;
-              this.innerHTML = isHidden
-                ? svgOpen + ' View all ' + total + ' publications'
-                : svgClose + ' Collapse publication list';
-              if (!isHidden) {
-                setTimeout(() => {
-                  const smooth = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-                  section.scrollIntoView({ behavior: smooth ? "smooth" : "auto" });
-                  updatePublicationNumbers('#full-publications');
-                }, 120);
+              const smooth = () => !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+
+              const isExpanded = () => !section.classList.contains("hidden");
+
+              /* true only when the button has scrolled off the TOP: you are inside
+                 the list, past the control */
+              function scrolledPastToggle() {
+                const r = toggle.getBoundingClientRect();
+                const top = nav ? nav.getBoundingClientRect().height : 0;
+                return r.bottom <= top;
               }
-            });
+
+              function setExpanded(expanded) {
+                section.classList.toggle("hidden", !expanded);
+                toggle.setAttribute("aria-expanded", String(expanded));
+                const total = document.querySelectorAll("#full-publications .publication-item").length;
+                toggle.innerHTML = expanded
+                  ? svgClose + " Collapse publication list"
+                  : svgOpen + " View all " + total + " publications";
+                if (expanded) {
+                  updatePublicationNumbers("#full-publications");
+                } else if (scrolledPastToggle()) {
+                  /* collapsing from deep in the list would strand you past the end of
+                     the page, so bring the button back with the least movement */
+                  toggle.scrollIntoView({ behavior: smooth() ? "smooth" : "auto", block: "nearest" });
+                }
+              }
+
+              toggle.setAttribute("aria-expanded", "false");
+              toggle.addEventListener("click", function (e) {
+                e.preventDefault();
+                setExpanded(!isExpanded());   /* expanding never moves the page */
+              });
+            })();
 
             // Initial numbering for full list only; remove any numbers from Selected
             document.querySelectorAll('#publications .pub-number').forEach(n => n.remove());
